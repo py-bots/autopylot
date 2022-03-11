@@ -3,10 +3,9 @@ import os
 import sys
 import pathlib
 import time
+from auto_pylot import CrashHandler
 
 from auto_pylot.CrashHandler import report_error
-
-print("310 voice module imported")
 
 def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
     from ctypes import c_buffer, windll
@@ -45,8 +44,8 @@ def speech_to_text():
     # import section
     try:
         import pyaudio
-    except ModuleNotFoundError:
-        raise ModuleNotFoundError("pyaudio module not found")
+    except Exception as ex:
+        report_error(ex)
     import speech_recognition as sr
     import sys
 

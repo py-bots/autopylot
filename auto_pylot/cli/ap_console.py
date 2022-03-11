@@ -18,7 +18,7 @@ def main():
 
     if os_name == windows_os:
         # os.system(f'{python_exe_path}')
-        os.system(f'{python_exe_path} -i -c "import auto_pylot as cf; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
+        os.system(f'{python_exe_path} -i -c "import auto_pylot as ap; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
     # elif os_name == linux_os:
     #     os.system(f'sudo python{python_version} -i -c "import clointfusion as cf; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
     else:

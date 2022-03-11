@@ -89,7 +89,7 @@ def _welcome_message():
     print()
     print(message)
     f = Figlet(font='small', width=150)
-    console.print(f.renderText("Auto-Pylot Community Edition"))
+    console.print(f.renderText("Auto Pylot Community Edition"))
 
 
 # check the system and return true if 64 bit, false if 32 bit
@@ -108,11 +108,40 @@ def is_supported():
             print("https://www.python.org/ftp/python/3.9.7/python-3.9.7-macos11.pkg")
         sys.exit(0)
     else:
-        return True
+        return check_req()
 
+def check_req():
+    try:
+        import pyaudio
+    except ModuleNotFoundError:
+        from auto_pylot.CrashHandler import install_pyaudio
+        try:
+            install_pyaudio()
+        except Exception as e:
+            return False
+    try:
+        scripts_verify()
+    except Exception as ex:
+        from auto_pylot.CrashHandler import report_error
+        report_error(ex)
+        return False
+    
+    return True
+
+def scripts_verify():
+    import subprocess
+    Scripts_Path = os.path.join(sys.exec_prefix, "Scripts")
+    user_path = (str(subprocess.run(
+        ["powershell", "-Command", "[Environment]::GetEnvironmentVariable('Path','User')"], capture_output=True).stdout.decode('ascii')).replace(
+        ';;', ';')).replace('\r\n', '')
+    if Scripts_Path.lower() not in user_path.lower():
+        user_path = user_path + ';' + Scripts_Path + ';' + '\r\n'
+        subprocess.call('setx path "{}"'.format(user_path),
+                        shell=True, stdout=subprocess.PIPE)
+        print("Scripts Path Updated. We recommend you to restart your system for the changes to take effect.")
 
 if os_name == windows_os:
-    if not sys.argv[0].endswith(('cf_py.exe', 'cf.exe')):
+    if not sys.argv[0].endswith(('ap_py.exe', 'ap.exe')):
         # Add cli's here to skip the welcome msg twice
         _welcome_message()
 else:

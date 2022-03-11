@@ -289,6 +289,14 @@ def uninstall_module(module_name):
         text_to_speech("Sorry, I could not uninstall the module {}".format(
             module_name))
 
+def install_pyaudio():
+    import sys
+    import subprocess
+    version_install = str(sys.version_info.major) + str(sys.version_info.minor)
+    _module = f"https://cdn.statically.io/gh/PyBots-Pvt-Ltd/auto-pylot/main/support/whls/PyAudio-0.2.11-cp{version_install}-cp{version_install}-win_amd64.whl"
+    
+    subprocess.call([sys.executable, "-m", "pip", "install", _module])
+
 # try:
 #     # x = 2 /0
 #     raise IndexError

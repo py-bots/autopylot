@@ -1,6 +1,5 @@
 from auto_pylot.CrashHandler import report_error
 
-print("310 mouse module imported")
 
 def mouse_click(x='', y='', left_or_right="left", no_of_clicks=1, type_of_movement="abs"):
     

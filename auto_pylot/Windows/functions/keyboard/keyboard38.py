@@ -4,8 +4,6 @@ from auto_pylot.CrashHandler import report_error
 #  - key_write_enter
 #  - key_hit_enter
 
-print("38 Keyboard loaded")
-
 def key_press(key_1='', key_2='', key_3='', write_to_window=""):
 
     # Description:
