@@ -141,7 +141,7 @@ def scripts_verify():
         print("Scripts Path Updated. We recommend you to restart your system for the changes to take effect.")
 
 if os_name == windows_os:
-    if not sys.argv[0].endswith(('ap_py.exe', 'ap.exe')):
+    if not sys.argv[0].endswith(('ap_py.exe',)):
         # Add cli's here to skip the welcome msg twice
         _welcome_message()
 else:
