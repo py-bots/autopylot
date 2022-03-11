@@ -292,9 +292,14 @@ def uninstall_module(module_name):
 def install_pyaudio():
     import sys
     import subprocess
-    version_install = str(sys.version_info.major) + str(sys.version_info.minor)
-    _module = f"https://cdn.statically.io/gh/PyBots-Pvt-Ltd/auto-pylot/main/support/whls/PyAudio-0.2.11-cp{version_install}-cp{version_install}-win_amd64.whl"
+    _version_1 = str(sys.version_info.major) + str(sys.version_info.minor)
     
+    if _version_1 == "37":
+        _version_2 = "37m"
+    else:
+        _version_2 = _version_1
+    
+    _module = f"https://raw.githubusercontent.com/PyBots-Pvt-Ltd/auto-pylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
     subprocess.call([sys.executable, "-m", "pip", "install", _module])
 
 # try:
