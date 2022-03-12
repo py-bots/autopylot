@@ -12,7 +12,8 @@ def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
 
     sound = str(sound)
     if hasattr(sys.modules['__main__'], "__file__"):
-        sound = os.path.join(os.path.dirname(sys.modules['__main__'].__file__), str(sound))
+        sound = os.path.join(os.path.dirname(
+            sys.modules['__main__'].__file__), str(sound))
 
     def winCommand(*command):
         buf = c_buffer(255)
@@ -38,11 +39,12 @@ def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
 
     winCommand('close', alias)
 
+
 def text_to_speech(audio, show=True):
-    
+
     # import section
     import random
-    from gtts import gTTS # Google Text to Speech
+    from gtts import gTTS  # Google Text to Speech
     import os
 
     status = False
@@ -53,13 +55,13 @@ def text_to_speech(audio, show=True):
                 print(' '.join(audio))
             else:
                 print(str(audio))
-        
-        tts = gTTS(text=audio, lang='en', tld='co.in') # text to speech(voice)
-        r = random.randint(1,20000000)
+
+        tts = gTTS(text=audio, lang='en', tld='co.in')  # text to speech(voice)
+        r = random.randint(1, 20000000)
         audio_file = 'cloint_audio' + str(r) + '.mp3'
-        tts.save(audio_file) # save as mp3
-        playsound(audio_file) # play the audio file
-        os.remove(audio_file) # remove audio file
+        tts.save(audio_file)  # save as mp3
+        playsound(audio_file)  # play the audio file
+        os.remove(audio_file)  # remove audio file
 
     except Exception as ex:
         print(str(ex))
@@ -68,6 +70,7 @@ def text_to_speech(audio, show=True):
         status = True
     finally:
         return status
+
 
 def report_error(ex: Exception):
 
@@ -270,35 +273,40 @@ def report_error(ex: Exception):
         text_to_speech("You got a {}. It describes as {}. Look at line number {}".format(
             exception_name, exception_message, exception_line))
 
+
 def install_module(module_name):
     try:
         import subprocess
-        subprocess.call([sys.executable, "-m", "pip", "uninstall", module_name])
+        subprocess.call([sys.executable, "-m", "pip",
+                        "uninstall", module_name])
     except:
         text_to_speech("Sorry, I could not install the module {}".format(
             module_name))
+
 
 def uninstall_module(module_name):
     try:
         if module_name != "auto_pylot":
             import subprocess
-            subprocess.call([sys.executable, "-m", "pip", "uninstall", "-y", module_name])
+            subprocess.call([sys.executable, "-m", "pip",
+                            "uninstall", "-y", module_name])
         else:
             text_to_speech("You cannot uninstall auto_pylot from here.")
     except:
         text_to_speech("Sorry, I could not uninstall the module {}".format(
             module_name))
 
+
 def install_pyaudio():
     import sys
     import subprocess
     _version_1 = str(sys.version_info.major) + str(sys.version_info.minor)
-    
+
     if _version_1 == "37":
         _version_2 = "37m"
     else:
         _version_2 = _version_1
-    
+
     _module = f"https://raw.githubusercontent.com/PyBots-Pvt-Ltd/auto-pylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
     subprocess.call([sys.executable, "-m", "pip", "install", _module])
 

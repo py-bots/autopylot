@@ -31,13 +31,19 @@ classifiers = [
 'Medium' = ''
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.6.15,<=3.9.10"
 pyfiglet = "^0.8.post1"
 rich = "^11.2.0"
 gTTS = "^2.2.3"
 SpeechRecognition = "^3.8.1"
 pywinauto = "^0.6.8"
 speedtest-cli = "^2.1.3"
+helium = "^3.0.8"
+webdriver-manager = "^3.5.3"
+PyGetWindow = "^0.0.9"
+pyinspect = "^0.1.0"
+emoji = "^1.7.0"
+colored = "^1.4.3"
 
 [tool.poetry.scripts]
 ap = "auto_pylot.cli.auto_pylot:main"
@@ -45,6 +51,7 @@ ap_st = "auto_pylot.cli.speed_test:main"
 ap_py = "auto_pylot.cli.ap_console:main"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

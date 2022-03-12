@@ -4,6 +4,7 @@ import click
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
+
 @click.command(context_settings=CONTEXT_SETTINGS)
 def main():
     import random
@@ -22,11 +23,11 @@ def main():
     # elif os_name == linux_os:
     #     os.system(f'sudo python{python_version} -i -c "import clointfusion as cf; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
     else:
-    # #     try:
-    # #         os.system(f'python{python_version} -i -c "import clointfusion as cf; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
-    #     except:
-            print(f"This command is not available on {os_name.upper()}.")
-            print(
-                f"Please contribute to make this feature available on {os_name.upper()} system.")
-            # print(random.choice(contribution_messages))
-            # selft.crash_report(traceback.format_exception(*sys.exc_info(),limit=None, chain=True))
+        # #     try:
+        # #         os.system(f'python{python_version} -i -c "import clointfusion as cf; print(\'Try some of our functions | ap.{ch_function_1}() | or | ap.{ch_function_2}() | or | ap.{ch_function_3}() |\')"')
+        #     except:
+        print(f"This command is not available on {os_name.upper()}.")
+        print(
+            f"Please contribute to make this feature available on {os_name.upper()} system.")
+        # print(random.choice(contribution_messages))
+        # selft.crash_report(traceback.format_exception(*sys.exc_info(),limit=None, chain=True))

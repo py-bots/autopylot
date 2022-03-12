@@ -1,7 +1,8 @@
 from auto_pylot.CrashHandler import report_error
 
+
 def mouse_click(x='', y='', left_or_right="left", no_of_clicks=1, type_of_movement="abs"):
-    
+
     # Description:
     """
     Clicks at the given X Y Co-ordinates on the screen using single / double / triple click(s). Default clicks on current position.
@@ -67,8 +68,9 @@ def mouse_click(x='', y='', left_or_right="left", no_of_clicks=1, type_of_moveme
             return [status, data]
         return [status]
 
+
 def mouse_move(x="", y="", type_of_movement="abs"):
-    
+
     # Description:
     """
     Moves the cursor to the given X Y Co-ordinates.
@@ -113,7 +115,8 @@ def mouse_move(x="", y="", type_of_movement="abs"):
                     pwa.mouse.move(coords=(x, y))
                     time.sleep(0.1)
                 else:
-                    raise Exception("Please check the 'type of movement' value.")
+                    raise Exception(
+                        "Please check the 'type of movement' value.")
 
             else:
                 raise Exception("Type of movement is required.")
@@ -132,6 +135,7 @@ def mouse_move(x="", y="", type_of_movement="abs"):
         if status is True and data is not None:
             return [status, data]
         return [status]
+
 
 def mouse_drag_from_to(x1="", y1="", x2="", y2=""):
     # Description:
@@ -182,8 +186,9 @@ def mouse_drag_from_to(x1="", y1="", x2="", y2=""):
             return [status, data]
         return [status]
 
+
 def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
-    
+
     # import section
     import time
     import pyscreeze as ps
@@ -192,7 +197,7 @@ def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
     status = False
     data = None
     i = 0
-    
+
     try:
         if not img:
             raise Exception("Image path is required.")
@@ -215,4 +220,3 @@ def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
         if status is True and data is not None:
             return [status, data]
         return [status]
-

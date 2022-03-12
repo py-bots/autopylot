@@ -1,3 +1,4 @@
+from auto_pylot import __version__
 import platform
 import sys
 import os
@@ -18,10 +19,11 @@ python_37 = "3.7"
 python_38 = "3.8"
 python_39 = "3.9"
 python_310 = "3.10"
-from auto_pylot import __version__
 
-python_exe_path_ut = os.path.join(os.path.dirname(sys.executable), "python.exe")
-pythonw_exe_path_ut = os.path.join(os.path.dirname(sys.executable), "pythonw.exe")
+python_exe_path_ut = os.path.join(
+    os.path.dirname(sys.executable), "python.exe")
+pythonw_exe_path_ut = os.path.join(
+    os.path.dirname(sys.executable), "pythonw.exe")
 
 python_exe_path = python_exe_path_ut.replace(" ", '" "')
 pythonw_exe_path = pythonw_exe_path_ut.replace(" ", '" "')
@@ -84,7 +86,7 @@ def _welcome_message():
                      'We are exceedingly pleased to find people we can always count on. Thank you for being one of '
                      'our loyal and trusted clients.', ]
     message = random.choice(messages_list)
-    welcome_msg = f"\n{greeting} {str(user_name).title()} !  Welcome to Auto-Pylot {(__version__)}, Made in India with ❤️\n Python : {python_version}"
+    welcome_msg = f"\n{greeting} {str(user_name).title()} !  Welcome to Auto-Pylot {(__version__)}, Made in India with ❤️\nPython : {python_version} || OS : {os_name}"
     print(welcome_msg)
     print()
     print(message)
@@ -110,6 +112,7 @@ def is_supported():
     else:
         return check_req()
 
+
 def check_req():
     try:
         import pyaudio
@@ -125,8 +128,9 @@ def check_req():
         from auto_pylot.CrashHandler import report_error
         report_error(ex)
         return False
-    
+
     return True
+
 
 def scripts_verify():
     import subprocess
@@ -140,10 +144,10 @@ def scripts_verify():
                         shell=True, stdout=subprocess.PIPE)
         print("Scripts Path Updated. We recommend you to restart your system for the changes to take effect.")
 
+
 if os_name == windows_os:
     if not sys.argv[0].endswith(('ap_py.exe',)):
         # Add cli's here to skip the welcome msg twice
         _welcome_message()
 else:
     sys.exit()
-

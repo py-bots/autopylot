@@ -7,13 +7,15 @@ from auto_pylot import CrashHandler
 
 from auto_pylot.CrashHandler import report_error
 
+
 def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
     from ctypes import c_buffer, windll
     from random import random
 
     sound = str(sound)
     if hasattr(sys.modules['__main__'], "__file__"):
-        sound = os.path.join(os.path.dirname(sys.modules['__main__'].__file__), str(sound))
+        sound = os.path.join(os.path.dirname(
+            sys.modules['__main__'].__file__), str(sound))
 
     def winCommand(*command):
         buf = c_buffer(255)
@@ -39,6 +41,7 @@ def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
 
     winCommand('close', alias)
 
+
 def speech_to_text():
 
     # import section
@@ -55,7 +58,7 @@ def speech_to_text():
 
     recognizer = sr.Recognizer()
     energy_threshold = [3000]
-    
+
     unknown = False
 
     try:
@@ -97,11 +100,12 @@ def speech_to_text():
     except Exception as ex:
         report_error(ex)
 
+
 def text_to_speech(audio, show=True):
 
     # import section
     import random
-    from gtts import gTTS # Google Text to Speech
+    from gtts import gTTS  # Google Text to Speech
     import os
 
     status = False
@@ -112,13 +116,13 @@ def text_to_speech(audio, show=True):
                 print(' '.join(audio))
             else:
                 print(str(audio))
-        
-        tts = gTTS(text=audio, lang='en', tld='co.in') # text to speech(voice)
-        r = random.randint(1,20000000)
+
+        tts = gTTS(text=audio, lang='en', tld='co.in')  # text to speech(voice)
+        r = random.randint(1, 20000000)
         audio_file = 'auto_pylot_audio' + str(r) + '.mp3'
-        tts.save(audio_file) # save as mp3
-        playsound(audio_file) # play the audio file
-        os.remove(audio_file) # remove audio file
+        tts.save(audio_file)  # save as mp3
+        playsound(audio_file)  # play the audio file
+        os.remove(audio_file)  # remove audio file
 
     except Exception as ex:
         report_error(ex)

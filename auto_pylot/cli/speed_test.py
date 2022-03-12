@@ -18,8 +18,8 @@ def main():
             # try:
             #     print(os.system("speedtest-cli"))
             # except:
-                print(
-                    "This feature is curently not supported on macOS. Please contribute to make the tomorrow better.")
-                print(random.choice(contribution_messages))
+            print(
+                "This feature is curently not supported on macOS. Please contribute to make the tomorrow better.")
+            print(random.choice(contribution_messages))
     except Exception as ex:
         report_error(ex)

@@ -7,8 +7,7 @@ from auto_pylot.CheckSystem import is_supported
 compatible_system = is_supported()
 
 if compatible_system:
-        
-    
+
     # # ---------  Message  Functions | Current Count : 4
     # from auto_pylot.Engine import message_pop_up
     # from auto_pylot.Engine import message_counter_down_timer
@@ -26,46 +25,47 @@ if compatible_system:
     from auto_pylot.Engine import key_write_enter
     from auto_pylot.Engine import key_hit_enter
 
-    # # ---------  Browser Functions | Current Count : 1
-    # from auto_pylot.Engine import ChromeBrowser
-    
-    # # ---------  Folder Functions | Current Count : 8
-    # from auto_pylot.Engine import folder_read_text_file
-    # from auto_pylot.Engine import folder_write_text_file
-    # from auto_pylot.Engine import folder_create
-    # from auto_pylot.Engine import folder_create_text_file
-    # from auto_pylot.Engine import folder_get_all_filenames_as_list
-    # from auto_pylot.Engine import folder_delete_all_files
-    # from auto_pylot.Engine import file_rename
-    # from auto_pylot.Engine import file_get_json_details
+    # ---------  Browser Functions | Current Count : 1
+    from auto_pylot.Engine import ChromeBrowser
 
-    # # ---------  Window Operations Functions | Current Count : 6
-    # from auto_pylot.Engine import window_show_desktop
-    # from auto_pylot.Engine import window_get_all_opened_titles_windows
-    # from auto_pylot.Engine import window_activate_and_maximize_windows
-    # from auto_pylot.Engine import window_minimize_windows
-    # from auto_pylot.Engine import window_close_windows
-    # from auto_pylot.Engine import launch_any_exe_bat_application
+    # ---------  Folder Functions | Current Count : 8
+    from auto_pylot.Engine import folder_read_text_file
+    from auto_pylot.Engine import folder_write_text_file
+    from auto_pylot.Engine import folder_create
+    from auto_pylot.Engine import folder_create_text_file
+    from auto_pylot.Engine import folder_get_all_filenames_as_list
+    from auto_pylot.Engine import folder_delete_all_files
+    from auto_pylot.Engine import file_rename
+    from auto_pylot.Engine import file_get_json_details
 
-    # # ---------  String Functions | Current Count : 3
-    # from auto_pylot.Engine import string_extract_only_alphabets
-    # from auto_pylot.Engine import string_extract_only_numbers
-    # from auto_pylot.Engine import string_remove_special_characters
+    # ---------  Window Operations Functions | Current Count : 6
+    from auto_pylot.Engine import window_show_desktop
+    from auto_pylot.Engine import window_get_all_opened_titles_windows
+    from auto_pylot.Engine import window_activate_and_maximize_windows
+    from auto_pylot.Engine import window_minimize_windows
+    from auto_pylot.Engine import window_close_windows
+    from auto_pylot.Engine import launch_any_exe_bat_application
 
-    # # --------- Screenscraping Functions | Current Count : 5
-    # from auto_pylot.Engine import scrape_save_contents_to_notepad
-    # from auto_pylot.Engine import screen_clear_search
-    # from auto_pylot.Engine import search_highlight_tab_enter_open
-    # from auto_pylot.Engine import find_text_on_screen
+    # ---------  String Functions | Current Count : 3
+    from auto_pylot.Engine import string_extract_only_alphabets
+    from auto_pylot.Engine import string_extract_only_numbers
+    from auto_pylot.Engine import string_remove_special_characters
 
-    # # --------- Utility Functions | Current Count : 7
-    # from auto_pylot.Engine import find
-    # from auto_pylot.Engine import pause_program
-    # from auto_pylot.Engine import show_emoji
-    # from auto_pylot.Engine import download_this_file
-    # from auto_pylot.Engine import clear_screen
-    # from auto_pylot.Engine import print_with_magic_color
+    # --------- Screenscraping Functions | Current Count : 5
+    from auto_pylot.Engine import scrape_save_contents_to_notepad
+    from auto_pylot.Engine import screen_clear_search
+    from auto_pylot.Engine import search_highlight_tab_enter_open
+    from auto_pylot.Engine import find_text_on_screen
 
+    # --------- Utility Functions | Current Count : 7
+    from auto_pylot.Engine import find
+    from auto_pylot.Engine import pause_program
+    from auto_pylot.Engine import show_emoji
+    from auto_pylot.Engine import download_this_file
+    from auto_pylot.Engine import clear_screen
+    from auto_pylot.Engine import print_with_magic_color
+    from auto_pylot.Engine import install_module
+    from auto_pylot.Engine import uninstall_module
 
     # --------- Voice Interface | Current Count : 2
     from auto_pylot.Engine import text_to_speech
