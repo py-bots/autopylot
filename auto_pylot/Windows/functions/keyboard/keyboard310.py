@@ -52,7 +52,7 @@ def key_press(key_1='', key_2='', key_3='', write_to_window=""):
     # import section
     import time
     import pywinauto as pwa
-    # from auto_pylot.Engine import window_activate
+    from auto_pylot.Engine import window_activate_window
 
     # Response section
     status = False
@@ -113,7 +113,7 @@ def key_press(key_1='', key_2='', key_3='', write_to_window=""):
         case_2 = True if key_1 in special_keys and key_2 in special_keys and key_3 not in special_keys else False  # 2 Special Keys
 
         if write_to_window:
-            window_activate(write_to_window)
+            window_activate_window(write_to_window)
 
         if case_1:
             key_1_down = make_down(key_1)
@@ -162,7 +162,7 @@ def key_write_enter(text_to_write="", write_to_window="", delay_after_typing=1, 
     # import section
     import time
     import pywinauto as pwa
-    # from auto_pylot.Engine import window_activate
+    from auto_pylot.Engine import window_activate_window
     # Response section
     status = False
     data = None
@@ -173,10 +173,11 @@ def key_write_enter(text_to_write="", write_to_window="", delay_after_typing=1, 
             raise Exception("Text to write is empty.")
 
         if write_to_window:
-            window_activate(write_to_window)
+            window_activate_window(write_to_window)
 
         time.sleep(0.2)
-        pwa.keyboard.send_keys(text_to_write)
+        pwa.keyboard.send_keys(
+            text_to_write, with_spaces=True, with_tabs=True, with_newlines=True)
         if key.lower() == "e":
             pwa.keyboard.send_keys('{ENTER}')
         if key.lower() == "t":
@@ -213,7 +214,7 @@ def key_hit_enter(write_to_window=""):
     # import section
     import time
     import pywinauto as pwa
-    # from auto_pylot.Engine import window_activate
+    from auto_pylot.Engine import window_activate_window
 
     # Response section
     status = False
@@ -223,7 +224,7 @@ def key_hit_enter(write_to_window=""):
 
     try:
         if write_to_window:
-            window_activate(write_to_window)
+            window_activate_window(write_to_window)
         pwa.keyboard.send_keys('{ENTER}')
         status = True
 
