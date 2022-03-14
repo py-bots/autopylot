@@ -12,6 +12,7 @@ string = import_module(f'auto_pylot.{Platform}.functions.string')
 windows = import_module(f'auto_pylot.{Platform}.functions.windows')
 screen_scraping = import_module(
     f'auto_pylot.{Platform}.functions.screen_scraping')
+excel = import_module(f'auto_pylot.{Platform}.functions.excel')
 extras = import_module(f'auto_pylot.{Platform}.functions.extras')
 
 
@@ -245,13 +246,39 @@ def file_get_json_details(path_of_json_file='', section=''):
 
 # ---------  Window Operations Functions ---------
 
-def window_show_desktop():
+def windows_show_desktop():
     """
     Minimizes all the applications and shows Desktop.
     Returns:
         [status:bool]
     """
     return windows.Windows.window_show_desktop()
+
+
+def windows_launch_app(pathOfExeFile=""):
+    """Launches any exe or batch file or excel file etc.
+    Args:
+        pathOfExeFile (str, optional): Location of the file with extension
+        Eg: Notepad, TextEdit. Defaults to "".
+    Returns [status]
+    """
+    return windows.Windows.launch_any_exe_bat_application(pathOfExeFile)
+
+
+def window_get_active_window():
+    """
+    Returns the active window title.
+    Returns : [status,data]
+    """
+    return windows.Windows.window_get_active_window()
+
+
+def window_activate_window(window_title=''):
+    """
+    Activates the given window.
+    """
+
+    return windows.Windows.window_activate_window(window_title)
 
 
 def window_get_all_opened_titles_windows():
@@ -291,23 +318,6 @@ def window_close_windows(windowName=""):
     """
     return windows.Windows.window_close_windows(windowName)
 
-
-def launch_any_exe_bat_application(pathOfExeFile=""):
-    """Launches any exe or batch file or excel file etc.
-    Args:
-        pathOfExeFile (str, optional): Location of the file with extension
-        Eg: Notepad, TextEdit. Defaults to "".
-    Returns [status]
-    """
-    return windows.launch_any_exe_bat_application(pathOfExeFile)
-
-
-def window_get_active_window():
-    """
-    Returns the active window title.
-    Returns : [status,data]
-    """
-    return windows.Windows.window_get_active_window()
 
 # ---------  Window Operations Functions Ends ---------
 
@@ -454,6 +464,166 @@ def uninstall_module(module_name=""):
     extras.Extras.uninstall_module(module_name)
 
 # --------- Utility Functions Ends ---------
+
+
+# ---------  Excel Functions ---------
+
+def excel_get_row_column_count(excel_path="", sheet_name="Sheet1", header=0):
+    """
+    Gets the row and coloumn count of the provided excel sheet.
+    Parameters:
+        excel_path  (str) : Full path to the excel file with slashes.
+        sheet_name           (str) : by default it is Sheet1.
+    Returns:
+        row (int) : number of rows
+        col (int) : number of coloumns
+    """
+    return excel.Excel.excel_get_row_column_count(excel_path, sheet_name, header)
+
+
+def excel_copy_range_from_sheet(excel_path="", sheet_name='Sheet1', startCol=0, startRow=0, endCol=0, endRow=0):  # *
+    """
+    Copies the specific range from the provided excel sheet and returns copied data as a list
+    Parameters:
+        excel_path :"Full path of the excel file with double slashes"
+        sheet_name     :"Source sheet name from where contents are to be copied"
+        startCol          :"Starting column number (index starts from 1) from where copying starts"
+        startRow          :"Starting row number (index starts from 1) from where copying starts"
+        endCol            :"Ending column number ex:4 upto where cells to be copied"
+        endRow            :"Ending column number ex:5 upto where cells to be copied"
+    Returns:
+    rangeSelected        : the copied range data
+    """
+    return excel.Excel.excel_copy_range_from_sheet(excel_path, sheet_name, startCol, startRow, endCol, endRow)
+
+
+def excel_copy_paste_range_from_to_sheet(excel_path="", sheet_name='Sheet1', startCol=0, startRow=0, endCol=0, endRow=0, copiedData=""):  # *
+    """
+    Pastes the copied data in specific range of the given excel sheet.
+    """
+    return excel.Excel.excel_copy_paste_range_from_to_sheet(excel_path, sheet_name, startCol, startRow, endCol, endRow, copiedData)
+
+
+def excel_split_by_column(excel_path="", sheet_name='Sheet1', header=0, columnName=""):  # *
+    """
+    Splits the excel file by Column Name
+    """
+    excel.Excel.excel_split_by_column(
+        excel_path, sheet_name, header, columnName)
+
+
+def excel_split_the_file_on_row_count(excel_path="", sheet_name='Sheet1', rowSplitLimit="", outputFolderPath="", outputTemplateFileName="Split"):  # *
+    """
+    Splits the excel file as per given row limit
+    """
+    return excel.Excel.excel_split_the_file_on_row_count(excel_path, sheet_name, rowSplitLimit, outputFolderPath, outputTemplateFileName)
+
+
+def excel_merge_all_files(input_folder_path="", output_folder_path=""):
+    """
+    Merges all the excel files in the given folder
+    """
+    return excel.Excel.excel_merge_all_files(input_folder_path, output_folder_path)
+
+
+def excel_drop_columns(excel_path="", sheet_name='Sheet1', header=0, columnsToBeDropped=""):
+    """
+    Drops the desired column from the given excel file
+    """
+    excel.Excel.excel_drop_columns(
+        excel_path, sheet_name, header, columnsToBeDropped)
+
+
+def excel_clear_sheet(excel_path="", sheet_name="Sheet1", header=0):
+    """
+    Clears the contents of given excel files keeping header row intact
+    """
+    excel.Excel.excel_clear_sheet(excel_path, sheet_name, header)
+
+
+def excel_set_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnName="", cellNumber=0, setText=""):  # *
+    """
+    Writes the given text to the desired column/cell number for the given excel file
+    """
+    return excel.Excel.excel_set_single_cell(excel_path, sheet_name, header, columnName, cellNumber, setText)
+
+
+def excel_get_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnName="", cellNumber=0):  # *
+    """
+    Gets the text from the desired column/cell number of the given excel file
+    """
+    return excel.Excel.excel_get_single_cell(excel_path, sheet_name, header, columnName, cellNumber)
+
+
+def excel_remove_duplicates(excel_path="", sheet_name="Sheet1", header=0, columnName="", saveResultsInSameExcel=True, which_one_to_keep="first"):  # *
+    """
+    Drops the duplicates from the desired Column of the given excel file
+    """
+    return excel.Excel.excel_remove_duplicates(excel_path, sheet_name, header, columnName, saveResultsInSameExcel, which_one_to_keep)
+
+
+def excel_create_excel_file_in_given_folder(fullPathToTheFolder="", excelFileName="", sheet_name="Sheet1"):
+    """
+    Creates an excel file in the desired folder with desired filename
+    Internally this uses folder_create() method to create folders if the folder/s does not exist.
+    Parameters:
+        fullPathToTheFolder (str) : Complete path to the folder with double slashes.
+        excelFileName       (str) : File Name of the excel to be created (.xlsx extension will be added automatically.
+        sheet_name           (str) : By default it will be "Sheet1".
+
+    Returns:
+        returns boolean TRUE if the excel file is created
+    """
+    return excel.Excel.excel_create_excel_file_in_given_folder(fullPathToTheFolder, excelFileName, sheet_name)
+
+
+def excel_if_value_exists(excel_path="", sheet_name='Sheet1', header=0, usecols="", value=""):
+    """
+    Check if a given value exists in given excel. Returns True / False
+    """
+    return excel.Excel.excel_if_value_exists(excel_path, sheet_name, header, usecols, value)
+
+
+def excel_to_colored_html(formatted_excel_path=""):
+    """
+    Converts given Excel to HTML preserving the Excel format and saves in same folder as .html
+    """
+    return excel.Excel.excel_to_colored_html(formatted_excel_path)
+
+
+def excel_get_all_sheet_names(excelFilePath=""):
+    """
+    Gives you all names of the sheets in the given excel sheet.
+    Parameters:
+        excelFilePath  (str) : Full path to the excel file with slashes.
+
+    returns : 
+        all the names of the excelsheets as a LIST.
+    """
+    return excel.Excel.excel_get_all_sheet_names(excelFilePath)
+
+
+def excel_get_all_header_columns(excel_path="", sheet_name="Sheet1", header=0):
+    """
+    Gives you all column header names of the given excel sheet.
+    """
+    return excel.Excel.excel_get_all_header_columns(excel_path, sheet_name, header)
+
+
+def excel_describe_data(excel_path="", sheet_name='Sheet1', header=0):
+    """
+    Describe statistical data for the given excel
+    """
+    return excel.Excel.excel_describe_data(excel_path, sheet_name, header)
+
+
+def isNaN(value):
+    """
+    Returns TRUE if a given value is NaN False otherwise
+    """
+    return excel.Excel.isNaN(value)
+
+# ---------  Excel Functions Ends ---------
 
 
 # --------- Voice Interface ---------

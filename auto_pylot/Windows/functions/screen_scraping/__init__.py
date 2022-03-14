@@ -11,3 +11,6 @@ if python_version in [python_37, python_38, python_39, python_310]:
 else:
     print("Python Version Not Supported")
     sys.exit()
+
+
+# Number of Function : 5 (13-03-2022)

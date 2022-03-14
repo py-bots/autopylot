@@ -13,7 +13,9 @@ def main():
     """CLI for testing internet bandwidth using speedtest.net"""
     try:
         if os_name == windows_os:
-            print(os.system(f'{python_exe_path} -m speedtest'))
+            import subprocess
+            import sys
+            print(subprocess.call([sys.executable, "-m", "speedtest"]))
         else:
             # try:
             #     print(os.system("speedtest-cli"))

@@ -38,13 +38,15 @@ if compatible_system:
     from auto_pylot.Engine import file_rename
     from auto_pylot.Engine import file_get_json_details
 
-    # ---------  Window Operations Functions | Current Count : 6
-    from auto_pylot.Engine import window_show_desktop
+    # ---------  Window Operations Functions | Current Count : 8
+    from auto_pylot.Engine import windows_show_desktop
+    from auto_pylot.Engine import windows_launch_app
+    from auto_pylot.Engine import window_get_active_window
+    from auto_pylot.Engine import window_activate_window
     from auto_pylot.Engine import window_get_all_opened_titles_windows
     from auto_pylot.Engine import window_activate_and_maximize_windows
     from auto_pylot.Engine import window_minimize_windows
     from auto_pylot.Engine import window_close_windows
-    from auto_pylot.Engine import launch_any_exe_bat_application
 
     # ---------  String Functions | Current Count : 3
     from auto_pylot.Engine import string_extract_only_alphabets
@@ -57,12 +59,12 @@ if compatible_system:
     from auto_pylot.Engine import search_highlight_tab_enter_open
     from auto_pylot.Engine import find_text_on_screen
 
-    # --------- Utility Functions | Current Count : 7
+    # --------- Utility Functions | Current Count : 8
     from auto_pylot.Engine import find
     from auto_pylot.Engine import pause_program
-    from auto_pylot.Engine import show_emoji
     from auto_pylot.Engine import download_this_file
     from auto_pylot.Engine import clear_screen
+    from auto_pylot.Engine import show_emoji
     from auto_pylot.Engine import print_with_magic_color
     from auto_pylot.Engine import install_module
     from auto_pylot.Engine import uninstall_module
@@ -70,3 +72,23 @@ if compatible_system:
     # --------- Voice Interface | Current Count : 2
     from auto_pylot.Engine import text_to_speech
     from auto_pylot.Engine import speech_to_text
+
+# ---------  Excel Functions | Current Count : 18
+    from auto_pylot.Engine import excel_get_row_column_count
+    from auto_pylot.Engine import excel_copy_range_from_sheet
+    from auto_pylot.Engine import excel_copy_paste_range_from_to_sheet
+    from auto_pylot.Engine import excel_split_by_column
+    from auto_pylot.Engine import excel_split_the_file_on_row_count
+    from auto_pylot.Engine import excel_merge_all_files
+    from auto_pylot.Engine import excel_drop_columns
+    from auto_pylot.Engine import excel_clear_sheet
+    from auto_pylot.Engine import excel_set_single_cell
+    from auto_pylot.Engine import excel_get_single_cell
+    from auto_pylot.Engine import excel_remove_duplicates
+    from auto_pylot.Engine import excel_create_excel_file_in_given_folder
+    from auto_pylot.Engine import excel_if_value_exists
+    from auto_pylot.Engine import excel_to_colored_html
+    from auto_pylot.Engine import excel_get_all_sheet_names
+    from auto_pylot.Engine import excel_get_all_header_columns
+    from auto_pylot.Engine import excel_describe_data
+    from auto_pylot.Engine import isNaN
