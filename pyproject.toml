@@ -52,6 +52,8 @@ pyinspect = "^0.1.0"
 emoji = "^1.7.0"
 colored = "^1.4.3"
 pandas = "^1.4.1"
+PyScreeze = "^0.1.28"
+Pillow = "^9.0.1"
 
 [tool.poetry.scripts]
 ap = "auto_pylot.cli.auto_pylot:main"
