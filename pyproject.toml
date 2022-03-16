@@ -34,7 +34,6 @@ classifiers = [
 [tool.poetry.urls]
 'Date ❤️ with PyBots' = 'https://sites.google.com/view/clointfusion-hackathon/date-with-clointfusion'
 'WhatsApp Community' = 'https://chat.whatsapp.com/JKr7m0avmkIFwYgMarShZG'
-'Documentation' = 'https://auto-pylot.readthedocs.io'
 
 
 [tool.poetry.dependencies]
