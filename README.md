@@ -252,7 +252,7 @@ We also invite everyone to take part in our monthly branded event, the `Auto-Pyl
 
 <br>
 
-## Date &#10084;&#65039; with Auto-Pylot
+<!-- ## Date &#10084;&#65039; with Auto-Pylot -->
 
 <!-- This an initiative for fast track entry into our growing workforce. For more details, please visit: [Date with ClointFusion](https://lnkd.in/gh_r9YB) -->
 
