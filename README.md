@@ -216,7 +216,7 @@ ap.find("window")
 
 ----
 
-* ### Loads of miscellaneous functions related to emoji, capture photo, flash (pop-up) messages etc:
+* ### Some miscellaneous functions:
 
 | Function | Accepted Parameters | Description |
 | :--------: | :----: | :----------- |

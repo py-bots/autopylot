@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Auto-Pylot"
-version = "0.0.2"
+version = "0.0.1"
 description = "Auto-Pylot is a Python based RPA platform for Software BOT development as an Open Source project. We strive to liberate humans from mundane, repetitive tasks, giving them more time to use their intellect and creativity to solve higher-order business challenges and perform knowledge work. We see a world where every employee will work side by side with Digital Workers, taking the robot out of the human, making them exponentially more productive and far more fulfilled."
 authors = ["PyBots <support@pybots.ai>"]
 license = "BSD"
