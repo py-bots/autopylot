@@ -230,13 +230,13 @@ ap.find("gui")
 <!-- <img src="https://github.com/ClointFusion/Image_ICONS_GIFs/blob/main/miscallaneous.gif?raw=true" height="400">     -->
 
 
-# BOTS made out of Auto-Pylot
+<!-- # BOTS made out of Auto-Pylot
 
 ### Outlook Email BOT implemented using Auto Pylot
 
 <img src="https://github.com/ClointFusion/Image_ICONS_GIFs/blob/main/Functions%20Light%20GIFs/Gmail_and_Outlook_BOT.gif?raw=true" height="400">
 
-<br>
+<br> -->
 
 # We love your contribution
 
