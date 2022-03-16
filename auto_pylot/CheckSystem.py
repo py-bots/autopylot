@@ -34,6 +34,8 @@ data_folder = data.__path__[0]
 # data_json_file = Path(os.path.join(data_folder, "data.json"))
 # cf_icon_cdt_file_path = Path(os.path.join(data_folder, "Cloint-ICON-CDT.ico"))
 # cf_logo_file_path = Path(os.path.join(data_folder, "Cloint-LOGO.PNG"))
+
+
 # --------- Contribution Messages ---------
 
 contribution_messages = ["We appreciate your contribution to a better tomorrow.", "Today's def (Python) creates tomorrow's software. Please contribute.", "A bug fix a day, keeps the Exceptions away. I'd be honored to have you as a contributor.",
@@ -94,8 +96,8 @@ def _welcome_message():
     console.print(f.renderText("Auto Pylot Community Edition"))
 
 
-# check the system and return true if 64 bit, false if 32 bit
 def is_supported():
+    # check the system and return true if 64 bit, false if 32 bit
     import struct
     import sys
 
@@ -128,7 +130,6 @@ def check_req():
         from auto_pylot.CrashHandler import report_error
         report_error(ex)
         return False
-
     return True
 
 

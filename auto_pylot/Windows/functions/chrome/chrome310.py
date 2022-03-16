@@ -390,9 +390,6 @@ class ChromeBrowser:
         finally:
             return [status, element.text]
 
-    def __str__(self):
-        return f"Chrome Browser with options: {self.options.experimental_options} Profile : {self.profile}"
-
     def close(self):
         status = False
         try:
@@ -403,3 +400,6 @@ class ChromeBrowser:
             report_error(e)
         finally:
             return [status]
+
+    def __str__(self):
+        return f"Chrome Browser with options: {self.options.experimental_options} Profile : {self.profile}"

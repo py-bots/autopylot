@@ -139,8 +139,8 @@ def folder_create_text_file(textFolderPath="", txtFileName="", custom=False):
             if ".txt" not in txtFileName:
                 txtFileName = txtFileName + ".txt"
 
-            if not os.path.exists(textFolderPath):
-                folder_create(textFolderPath)
+        if not os.path.exists(textFolderPath):
+            folder_create(textFolderPath)
 
         file_path = os.path.join(textFolderPath, txtFileName)
         file_path = Path(file_path)

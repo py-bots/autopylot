@@ -1,4 +1,3 @@
-from auto_pylot.CrashHandler import report_error
 import logging
 
 
