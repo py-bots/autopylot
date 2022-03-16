@@ -84,9 +84,9 @@ PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product dev
 ***TIP: You can find and inspect all of Auto-Pylot's functions using only one function i.e., `find()`. Just pass the partial name of the function.***
 
 ```
-ap.find("sort")
+ap.find("excel")
 
-ap.find("gui")
+ap.find("window")
 
 ```
 
