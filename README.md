@@ -63,7 +63,7 @@ PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product dev
     ```
     ap_py
     ```
-* ### Code Editor or IDE : Import ClointFusion first, and then run the file in Python.
+* ### Code Editor or IDE : Import Auto-Pylot first, and then run the file in Python.
 
     ```
     # ap_bot.py
@@ -77,11 +77,11 @@ PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product dev
     ```
 
 
-# ClointFusion in Action
+# Auto-Pylot in Action
 
 ## **Now access more than 100 functions (hit ctrl+space in your IDE)**
 
-***TIP: You can find and inspect all of ClointFusion's functions using only one function i.e., `find()`. Just pass the partial name of the function.***
+***TIP: You can find and inspect all of Auto-Pylot's functions using only one function i.e., `find()`. Just pass the partial name of the function.***
 
 ```
 ap.find("sort")
@@ -230,7 +230,7 @@ ap.find("gui")
 <!-- <img src="https://github.com/ClointFusion/Image_ICONS_GIFs/blob/main/miscallaneous.gif?raw=true" height="400">     -->
 
 
-# BOTS made out of ClointFusion
+# BOTS made out of Auto-Pylot
 
 ### Outlook Email BOT implemented using Auto Pylot
 
@@ -252,7 +252,7 @@ We also invite everyone to take part in our monthly branded event, the `Auto-Pyl
 
 <br>
 
-## Date &#10084;&#65039; with ClointFusion
+## Date &#10084;&#65039; with Auto-Pylot
 
 <!-- This an initiative for fast track entry into our growing workforce. For more details, please visit: [Date with ClointFusion](https://lnkd.in/gh_r9YB) -->
 
