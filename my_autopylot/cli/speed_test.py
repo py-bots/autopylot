@@ -1,8 +1,7 @@
 import random
-import os
 import click
 
-from my_autopylot.CheckSystem import os_name, windows_os, contribution_messages, python_exe_path
+from my_autopylot.CheckSystem import os_name, windows_os, contribution_messages
 from my_autopylot.CrashHandler import report_error
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])

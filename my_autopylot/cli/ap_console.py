@@ -1,5 +1,4 @@
-from my_autopylot.CheckSystem import os_name, windows_os, python_exe_path
-
+from my_autopylot.CheckSystem import os_name, windows_os
 import click
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])

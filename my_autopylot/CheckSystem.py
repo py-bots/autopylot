@@ -88,12 +88,12 @@ def _welcome_message():
                      'We are exceedingly pleased to find people we can always count on. Thank you for being one of '
                      'our loyal and trusted clients.', ]
     message = random.choice(messages_list)
-    welcome_msg = f"\n{greeting} {str(user_name).title()} !  Welcome to Auto-Pylot {(__version__)}, Made in India with ❤️\nPython : {python_version} || OS : {os_name}"
+    welcome_msg = f"\n{greeting} {str(user_name).title()} !  Welcome to Auto-Pylot {(__version__)}, Made in India with ❤️\nPython : {python_version} || OS : {str(os_name).title()}"
     print(welcome_msg)
     print()
     print(message)
     f = Figlet(font='small', width=150)
-    console.print(f.renderText("Auto Pylot Community Edition"))
+    console.print(f.renderText("AutoPylot Community Edition"))
 
 
 def is_supported():
@@ -107,30 +107,30 @@ def is_supported():
         print(
             "Please download 64-bit Architecture from the link down below. Press (ctrl + click) on link to download.\n")
         if os_name == "windows":
-            print("https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe")
-        if os_name == "darwin":
-            print("https://www.python.org/ftp/python/3.9.7/python-3.9.7-macos11.pkg")
+            print("https://www.python.org/ftp/python/3.9.10/python-3.9.10-amd64.exe")
         sys.exit(0)
     else:
         return check_req()
 
 
 def check_req():
-    try:
-        import pyaudio
-    except ModuleNotFoundError:
-        from my_autopylot.CrashHandler import install_pyaudio
+    from my_autopylot.Toolkit import DisableLogger
+    with DisableLogger:
         try:
-            install_pyaudio()
-        except Exception as e:
+            import pyaudio
+        except ModuleNotFoundError:
+            from my_autopylot.CrashHandler import install_pyaudio
+            try:
+                install_pyaudio()
+            except Exception as e:
+                return False
+        try:
+            scripts_verify()
+        except Exception as ex:
+            from my_autopylot.CrashHandler import report_error
+            report_error(ex)
             return False
-    try:
-        scripts_verify()
-    except Exception as ex:
-        from my_autopylot.CrashHandler import report_error
-        report_error(ex)
-        return False
-    return True
+        return True
 
 
 def scripts_verify():

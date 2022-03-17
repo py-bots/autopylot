@@ -307,7 +307,7 @@ def install_pyaudio():
     else:
         _version_2 = _version_1
 
-    _module = f"https://raw.githubusercontent.com/PyBots-Pvt-Ltd/my-autopylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
+    _module = f"https://raw.githubusercontent.com/py-bots/my-autopylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
     subprocess.call([sys.executable, "-m", "pip", "install", _module])
 
 # try:
