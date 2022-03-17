@@ -114,23 +114,21 @@ def is_supported():
 
 
 def check_req():
-    from my_autopylot.Toolkit import DisableLogger
-    with DisableLogger:
+    try:
+        import pyaudio
+    except ModuleNotFoundError:
+        from my_autopylot.CrashHandler import install_pyaudio
         try:
-            import pyaudio
-        except ModuleNotFoundError:
-            from my_autopylot.CrashHandler import install_pyaudio
-            try:
-                install_pyaudio()
-            except Exception as e:
-                return False
-        try:
-            scripts_verify()
-        except Exception as ex:
-            from my_autopylot.CrashHandler import report_error
-            report_error(ex)
+            install_pyaudio()
+        except Exception as e:
             return False
-        return True
+    try:
+        scripts_verify()
+    except Exception as ex:
+        from my_autopylot.CrashHandler import report_error
+        report_error(ex)
+        return False
+    return True
 
 
 def scripts_verify():
