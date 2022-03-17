@@ -1,13 +1,13 @@
-## Welcome to Auto-Pylot , Made in India with &#10084;&#65039; 
+## Welcome to My-AutoPylot , Made in India with &#10084;&#65039; 
 
 <br>
 
 <img src="https://raw.githubusercontent.com/py-bots/media-pyles/main/autopylot/Auto%20Pylot%20Figlet%20Dark.png">
 
 
-# What is Auto-Pylot?
+# What is My-AutoPylot?
 
-PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product developed based on Python. Its a RPA framework for developers and common people to create Software BOTs. Using AI, we're working on Common Man's RPA.
+PyBots is an Indian firm based in Vadodara, Gujarat. My-AutoPylot is a product developed based on Python. Its a RPA framework for developers and common people to create Software BOTs. Using AI, we're working on Common Man's RPA.
 
 
 <!-- #### Check out Project Status
@@ -37,38 +37,38 @@ PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product dev
 
 <br>
 
-> ### Auto-Pylot is currently supported on Windows only ! (For macOS and Linux : Comming soon.)
+> ### My-AutoPylot is currently supported on Windows only ! (For macOS and Linux : Comming soon.)
 
 ## Windows :
 
-* Auto-Pylot is compatible with both Windows 10 and Windows 11.
+* My-AutoPylot is compatible with both Windows 10 and Windows 11.
 * Installing on a Windows PC is a breeze.
 * Make certain that Python 3.8 or Python 3.9 is installed.
 * Then, from the command prompt, execute the following command.
 
     ```
-    pip install -U auto-pylot
+    pip install -U my-autopylot
     ```
 
 # Importing
 
 <br>
 
-> ### Auto-Pylot can be accessed using one of two methods.
+> ### My-AutoPylot can be accessed using one of two methods.
 
 ## Windows :
 
-* ### Terminal : Opens a Python interpreter using the command " import auto-pylot as ap "
+* ### Terminal : Opens a Python interpreter using the command " import my-autopylot as ap "
 
     ```
     ap_py
     ```
-* ### Code Editor or IDE : Import Auto-Pylot first, and then run the file in Python.
+* ### Code Editor or IDE : Import My-AutoPylot first, and then run the file in Python.
 
     ```
     # ap_bot.py
 
-    import auto-pylot as cf
+    import my_autopylot as ap
 
     ap.windows_launch_app('notepad')
     ```
@@ -77,11 +77,11 @@ PyBots is an Indian firm based in Vadodara, Gujarat. Auto-Pylot is a product dev
     ```
 
 
-# Auto-Pylot in Action
+# My-AutoPylot in Action
 
 ## **Now access more than 100 functions (hit ctrl+space in your IDE)**
 
-***TIP: You can find and inspect all of Auto-Pylot's functions using only one function i.e., `find()`. Just pass the partial name of the function.***
+***TIP: You can find and inspect all of My-AutoPylot's functions using only one function i.e., `find()`. Just pass the partial name of the function.***
 
 ```
 ap.find("excel")
@@ -230,7 +230,7 @@ ap.find("window")
 <!-- <img src="https://github.com/ClointFusion/Image_ICONS_GIFs/blob/main/miscallaneous.gif?raw=true" height="400">     -->
 
 
-<!-- # BOTS made out of Auto-Pylot
+<!-- # BOTS made out of My-AutoPylot
 
 ### Outlook Email BOT implemented using Auto Pylot
 
@@ -240,26 +240,26 @@ ap.find("window")
 
 # We love your contribution
 
-Contribute to us by giving a star, writing articles on `Auto-Pylot`, giving comments, reporting bugs, bug fixes, feature enhancements, adding documentation, and many other ways. 
+Contribute to us by giving a star, writing articles on `My-AutoPylot`, giving comments, reporting bugs, bug fixes, feature enhancements, adding documentation, and many other ways. 
 
 
 ## Invitation to our Monthly Branded Hackathon
 
-We also invite everyone to take part in our monthly branded event, the `Auto-Pylot Hackathon`, and stand a chance to work with us.
+We also invite everyone to take part in our monthly branded event, the `My-AutoPylot Hackathon`, and stand a chance to work with us.
 
 <!-- Checkout our Hackathon Website for more details here: [ClointFusion Hackathon](https://sites.google.com/view/clointfusion-hackathon -->
 <!-- ) -->
 
 <br>
 
-<!-- ## Date &#10084;&#65039; with Auto-Pylot -->
+<!-- ## Date &#10084;&#65039; with My-AutoPylot -->
 
 <!-- This an initiative for fast track entry into our growing workforce. For more details, please visit: [Date with ClointFusion](https://lnkd.in/gh_r9YB) -->
 
 
 ## Acknowledgements
 
-We sincerely thanks to all it's dependent packages for the great contribution, which made `Auto-Pylot` possible!
+We sincerely thanks to all it's dependent packages for the great contribution, which made `My-AutoPylot` possible!
 
 <!-- Please find all the dependencies [here](https://openbase.com/python/ClointFusion/dependencies)  -->
 <!-- 

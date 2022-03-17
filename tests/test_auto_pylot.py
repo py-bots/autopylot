@@ -1,4 +1,4 @@
-from auto_pylot import __version__
+from my_autopylot import __version__
 
 
 def test_version():

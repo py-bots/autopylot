@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Auto-Pylot"
+name = "My-AutoPylot"
 version = "0.0.1"
 description = "Auto-Pylot is a Python based RPA platform for Software BOT development as an Open Source project. We strive to liberate humans from mundane, repetitive tasks, giving them more time to use their intellect and creativity to solve higher-order business challenges and perform knowledge work. We see a world where every employee will work side by side with Digital Workers, taking the robot out of the human, making them exponentially more productive and far more fulfilled."
 authors = ["PyBots <support@pybots.ai>"]
@@ -55,9 +55,9 @@ PyScreeze = "^0.1.28"
 Pillow = "^9.0.1"
 
 [tool.poetry.scripts]
-ap = "auto_pylot.cli.auto_pylot:main"
-ap_st = "auto_pylot.cli.speed_test:main"
-ap_py = "auto_pylot.cli.ap_console:main"
+ap = "my_autopylot.cli.my_autopylot:main"
+ap_st = "my_autopylot.cli.speed_test:main"
+ap_py = "my_autopylot.cli.ap_console:main"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
