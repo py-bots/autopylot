@@ -628,14 +628,14 @@ def isNaN(value):
 
 # --------- Voice Interface ---------
 
-def text_to_speech(audio, show=True, rate=170):
+def text_to_speech(audio, show=True):
     """
     Text to Speech using Google's Generic API
     Rate is the speed of speech. Default is 150
     Actual default : 200
 
     """
-    return voice.Voice.text_to_speech(audio, show, rate)
+    return voice.Voice.text_to_speech(audio, show)
 
 
 def speech_to_text():

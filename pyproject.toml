@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "My-AutoPylot"
-version = "0.0.3"
+version = "0.0.4"
 description = "Auto-Pylot is a Python based RPA platform for Software BOT development as an Open Source project. We strive to liberate humans from mundane, repetitive tasks, giving them more time to use their intellect and creativity to solve higher-order business challenges and perform knowledge work. We see a world where every employee will work side by side with Digital Workers, taking the robot out of the human, making them exponentially more productive and far more fulfilled."
 authors = ["PyBots <support@pybots.ai>"]
 license = "BSD"
@@ -37,7 +37,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = ">=3.8.0,<=3.9.10"
+python = ">=3.8.0,<=3.9.40"
 pyfiglet = "^0.8.post1"
 rich = "^11.2.0"
 gTTS = "^2.2.3"

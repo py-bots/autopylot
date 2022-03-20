@@ -402,4 +402,4 @@ class ChromeBrowser:
             return [status]
 
     def __str__(self):
-        return f"Chrome Browser with options: {self.options.experimental_options} Profile : {self.profile}"
+        return f"Chrome Browser with options: {self.options}"
