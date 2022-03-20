@@ -47,6 +47,7 @@ if compatible_system:
     from my_autopylot.Engine import window_activate_and_maximize_windows
     from my_autopylot.Engine import window_minimize_windows
     from my_autopylot.Engine import window_close_windows
+    from my_autopylot.Engine import window_restore_windows
 
     # ---------  String Functions | Current Count : 3
     from my_autopylot.Engine import string_extract_only_alphabets

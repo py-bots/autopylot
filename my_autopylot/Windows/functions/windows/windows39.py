@@ -356,3 +356,45 @@ def launch_any_exe_bat_application(pathOfExeFile=""):
         if status is True and data is not None:
             return [status, data]
         return [status]
+
+
+def window_restore_windows(windowName=""):
+    
+    # Description:
+    """
+    Restores the desired window.
+    Parameters:
+        windowName  (str) : Name of the window to restore.
+    """
+
+    # import section
+    import time
+    import pygetwindow as gw
+
+    # Response section
+    status = False
+    data = None
+
+    try:
+        if not windowName:
+            raise Exception('Window title name is empty.')
+
+        item, window_found = _window_find_exact_name(windowName)
+        if window_found:
+            windw = gw.getWindowsWithTitle(item)[0]
+            windw.restore()
+            time.sleep(1)
+        else:
+            raise Exception('Window title name not found.')
+
+        # If the function returns a value, it should be assigned to the data variable.
+        # data = value
+    except Exception as e:
+        report_error(e)
+
+    else:
+        status = True
+    finally:
+        if status is True and data is not None:
+            return [status, data]
+        return [status]

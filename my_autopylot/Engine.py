@@ -290,6 +290,17 @@ def window_get_all_opened_titles_windows():
     return windows.Windows.window_get_all_opened_titles_windows()
 
 
+def window_restore_windows(windowName=""):
+    """
+    Restores the given window.
+    Args:
+        windowName (str, optional): Name of the window you want to restore.
+        Eg: Notepad. Defaults to "".
+    Returns: [status]
+    """
+    return windows.Windows.window_restore_windows(windowName)
+
+
 def window_activate_and_maximize_windows(windowName=""):
     """
     Activates and maximizes the desired window.
