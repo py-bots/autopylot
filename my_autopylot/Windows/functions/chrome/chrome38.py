@@ -390,6 +390,40 @@ class ChromeBrowser:
         finally:
             return [status, element.text]
 
+    def get_element_image(self, element_xpath: str = "", base64_image: bool = True, image_name: str = ""):
+        """Get the image of the element.
+        Args:
+            element_xpath (str, optional): The xpath of the element. Defaults: ""
+        Returns:
+            bool: Whether the function is successful or failed.
+            str: The image of the element.
+        """
+
+        # Imports
+        from os.path import abspath
+
+        status = False
+        data = None
+        try:
+            element = self.browser_driver.find_element_by_xpath(element_xpath)
+            if base64_image:
+                data = element.screenshot_as_base64
+            else:
+                if image_name == "":
+                    image_name = abspath(f"Element-{str(element.id)}.png")
+                details = image_name.split(".")
+                if len(details) != 2:
+                    image_name = f"{image_name}.png"
+                element.screenshot(image_name)
+                data = abspath(image_name)
+
+            status = True
+        except Exception as e:
+            report_error(e)
+
+        finally:
+            return [status, data]
+
     def close(self):
         status = False
         try:

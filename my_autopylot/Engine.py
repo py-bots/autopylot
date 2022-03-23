@@ -14,7 +14,7 @@ screen_scraping = import_module(
     f'my_autopylot.{Platform}.functions.screen_scraping')
 excel = import_module(f'my_autopylot.{Platform}.functions.excel')
 extras = import_module(f'my_autopylot.{Platform}.functions.extras')
-
+blackbox = import_module(f'my_autopylot.{Platform}.functions.blackbox')
 
 # ---------  Mouse Functions ---------
 
@@ -173,7 +173,7 @@ def folder_write_text_file(txt_file_path="", contents=""):
     Writes given contents to a text file
     Returns : [status]
     """
-    folder.Folder.folder_write_text_file(txt_file_path, contents)
+    return folder.Folder.folder_write_text_file(txt_file_path, contents)
 
 
 def folder_create(strFolderPath=""):
@@ -185,7 +185,7 @@ def folder_create(strFolderPath=""):
     For example consider the following path:
     Returns :[status]
     """
-    folder.Folder.folder_create(strFolderPath)
+    return folder.Folder.folder_create(strFolderPath)
 
 
 def folder_create_text_file(textFolderPath="", txtFileName=""):
@@ -197,7 +197,7 @@ def folder_create_text_file(textFolderPath="", txtFileName=""):
         textFilePath (str) : Complete path to the folder with double slashes.
     Returns:[status,data]
     """
-    folder.Folder.folder_create_text_file(textFolderPath, txtFileName)
+    return folder.Folder.folder_create_text_file(textFolderPath, txtFileName)
 
 
 def folder_get_all_filenames_as_list(strFolderPath="", extension='all'):
@@ -231,7 +231,7 @@ def file_rename(old_file_path='', new_file_name='', print_status=True):
     Returns : [status,data]
         Path to new file:str
     '''
-    folder.Folder.file_rename(old_file_path, new_file_name, print_status)
+    return folder.Folder.file_rename(old_file_path, new_file_name, print_status)
 
 
 def file_get_json_details(path_of_json_file='', section=''):
@@ -381,7 +381,7 @@ def screen_clear_search(delay=0.2):
     Clears previously found text (crtl+f highlight)
     Returns: [status]
     """
-    screen_scraping.ScreenScraping.screen_clear_search(delay)
+    return screen_scraping.ScreenScraping.screen_clear_search(delay)
 
 
 def search_highlight_tab_enter_open(searchText="", hitEnterKey="Yes", shift_tab='No'):
@@ -390,7 +390,7 @@ def search_highlight_tab_enter_open(searchText="", hitEnterKey="Yes", shift_tab=
     This function is useful in Citrix environment
     Returns: [status]
     """
-    screen_scraping.ScreenScraping.search_highlight_tab_enter_open(
+    return screen_scraping.ScreenScraping.search_highlight_tab_enter_open(
         searchText, hitEnterKey, shift_tab)
 
 
@@ -398,7 +398,7 @@ def find_text_on_screen(searchText="", delay=0.1, occurance=1, isSearchToBeClear
     """
     Clears previous search and finds the provided text on screen.
     """
-    screen_scraping.ScreenScraping.find_text_on_screen(
+    return screen_scraping.ScreenScraping.find_text_on_screen(
         searchText, delay, occurance, isSearchToBeCleared)
 
 
@@ -410,7 +410,7 @@ def find_text_on_screen(searchText="", delay=0.1, occurance=1, isSearchToBeClear
 def find(function_partial_name=""):
     """Returns [status]"""
     # Find and inspect python functions
-    extras.Extras.find(function_partial_name)
+    return extras.Extras.find(function_partial_name)
 
 
 def pause_program(seconds="5"):
@@ -419,7 +419,7 @@ def pause_program(seconds="5"):
     Returns:
         [status]
     """
-    extras.Extras.pause_program(seconds)
+    return extras.Extras.pause_program(seconds)
 
 
 def show_emoji(strInput="", print_emoji=False):
@@ -448,7 +448,7 @@ def clear_screen():
     Clears Python Interpreter Terminal Window Screen
     Returns: [status]
     """
-    extras.Extras.clear_screen()
+    return extras.Extras.clear_screen()
 
 
 def print_with_magic_color(strMsg="", magic=False):
@@ -456,7 +456,7 @@ def print_with_magic_color(strMsg="", magic=False):
     Prints the message with colored foreground font
     Returns: [status]
     """
-    extras.Extras.print_with_magic_color(strMsg, magic)
+    return extras.Extras.print_with_magic_color(strMsg, magic)
 
 
 def install_module(module_name=""):
@@ -464,7 +464,7 @@ def install_module(module_name=""):
     Installs the module
     Returns: [status]
     """
-    extras.Extras.install_module(module_name)
+    return extras.Extras.install_module(module_name)
 
 
 def uninstall_module(module_name=""):
@@ -472,7 +472,22 @@ def uninstall_module(module_name=""):
     Uninstalls the module
     Returns: [status]
     """
-    extras.Extras.uninstall_module(module_name)
+    return extras.Extras.uninstall_module(module_name)
+
+
+def api_request(url: str, method='GET', data: dict = None, headers: dict = None):
+    """_summary_
+
+    Args:
+        url (str): _description_
+        method (str, optional): _description_. Defaults to 'GET'.
+        data (dict, optional): _description_. Defaults to None.
+        headers (dict, optional): _description_. Defaults to None.
+
+    Returns:
+        _type_: _description_
+    """
+    return extras.Extras.api_request(url, method, data, headers)
 
 # --------- Utility Functions Ends ---------
 
@@ -519,7 +534,7 @@ def excel_split_by_column(excel_path="", sheet_name='Sheet1', header=0, columnNa
     """
     Splits the excel file by Column Name
     """
-    excel.Excel.excel_split_by_column(
+    return excel.Excel.excel_split_by_column(
         excel_path, sheet_name, header, columnName)
 
 
@@ -541,7 +556,7 @@ def excel_drop_columns(excel_path="", sheet_name='Sheet1', header=0, columnsToBe
     """
     Drops the desired column from the given excel file
     """
-    excel.Excel.excel_drop_columns(
+    return excel.Excel.excel_drop_columns(
         excel_path, sheet_name, header, columnsToBeDropped)
 
 
@@ -549,7 +564,7 @@ def excel_clear_sheet(excel_path="", sheet_name="Sheet1", header=0):
     """
     Clears the contents of given excel files keeping header row intact
     """
-    excel.Excel.excel_clear_sheet(excel_path, sheet_name, header)
+    return excel.Excel.excel_clear_sheet(excel_path, sheet_name, header)
 
 
 def excel_set_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnName="", cellNumber=0, setText=""):  # *
@@ -657,3 +672,19 @@ def speech_to_text():
 
 
 # --------- Voice Interface Ends ---------
+
+
+# --------- API Functions ---------
+
+def image_to_text(img_path=""):
+    """_summary_
+    Args:
+        img_path (str, optional): Path of the image. 
+        Eg: D:\Files\Image.png, Defaults to "".
+    Returns: [status,data]
+        bool: If function is failed returns False.
+        str: Text from image.
+    """
+    return extras.Extras.image_to_text(img_path)
+
+# --------- API Functions Ends ---------

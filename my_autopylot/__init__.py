@@ -1,4 +1,4 @@
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 __author__ = 'PyBots'
 __email__ = 'support@pybots.ai'
 
@@ -69,12 +69,13 @@ if compatible_system:
     from my_autopylot.Engine import print_with_magic_color
     from my_autopylot.Engine import install_module
     from my_autopylot.Engine import uninstall_module
+    from my_autopylot.Engine import api_request
 
     # --------- Voice Interface | Current Count : 2
     from my_autopylot.Engine import text_to_speech
     from my_autopylot.Engine import speech_to_text
 
-# ---------  Excel Functions | Current Count : 18
+    # ---------  Excel Functions | Current Count : 18
     from my_autopylot.Engine import excel_get_row_column_count
     from my_autopylot.Engine import excel_copy_range_from_sheet
     from my_autopylot.Engine import excel_copy_paste_range_from_to_sheet
@@ -93,3 +94,6 @@ if compatible_system:
     from my_autopylot.Engine import excel_get_all_header_columns
     from my_autopylot.Engine import excel_describe_data
     from my_autopylot.Engine import isNaN
+
+    # ---------  API Functions | Current Count : 1
+    from my_autopylot.Engine import image_to_text

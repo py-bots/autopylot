@@ -340,9 +340,9 @@ def image_to_text(image_path):
     data = None
 
     try:
-        import my_autopylot.Windows.functions.BlackBox.BlackBox as BB
-        BB.Image_2_Text(image_path)
+        import my_autopylot.Windows.functions.blackbox.BlackBox as BB
         status = True
+        data = BB.Image_2_Text(image_path)
     except Exception as e:
         report_error(e)
     finally:

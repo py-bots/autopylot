@@ -130,6 +130,7 @@ def report_error(ex: Exception):
 
     exception_name = type(ex).__name__
     exception_message = str(ex)
+    exception_line = str(ex.__traceback__.tb_lineno)
 
     if "SystemExit" in exception_name:
         text_to_speech("Exiting!")
@@ -322,9 +323,9 @@ def report_error(ex: Exception):
                 exception_line))
 
     else:
-        from my_autopylot.Windows.functions.BlackBox.BlackBox import Report_Developer
+        import my_autopylot.Windows.functions.blackbox.BlackBox as BB
         try:
-            Report_Developer(ex)
+            BB.Report_Developer(ex)
         except:
             pass
         text_to_speech("You got a {}. It describes as {}.".format(
