@@ -31,7 +31,7 @@ def folder_read_text_file(txt_file_path=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def folder_write_text_file(txt_file_path="", contents=""):
@@ -68,7 +68,7 @@ def folder_write_text_file(txt_file_path="", contents=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def folder_create(strFolderPath=""):
@@ -107,7 +107,7 @@ def folder_create(strFolderPath=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def folder_create_text_file(textFolderPath="", txtFileName="", custom=False):
@@ -159,7 +159,7 @@ def folder_create_text_file(textFolderPath="", txtFileName="", custom=False):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def folder_get_all_filenames_as_list(strFolderPath="", extension='all'):
@@ -204,7 +204,7 @@ def folder_get_all_filenames_as_list(strFolderPath="", extension='all'):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def folder_delete_all_files(fullPathOfTheFolder="", file_extension_without_dot="all", print_status=True):
@@ -262,7 +262,7 @@ def folder_delete_all_files(fullPathOfTheFolder="", file_extension_without_dot="
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def file_rename(old_file_path='', new_file_name='', print_status=True):
@@ -313,7 +313,7 @@ def file_rename(old_file_path='', new_file_name='', print_status=True):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def file_get_json_details(path_of_json_file='', section=''):
@@ -357,4 +357,4 @@ def file_get_json_details(path_of_json_file='', section=''):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]

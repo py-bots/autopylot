@@ -28,7 +28,7 @@ def find(function_partial_name=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def pause_program(seconds="5"):
@@ -59,7 +59,7 @@ def pause_program(seconds="5"):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def download_this_file(url="", output_folder_path="", notify=True):
@@ -116,7 +116,7 @@ def download_this_file(url="", output_folder_path="", notify=True):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def clear_screen():
@@ -148,7 +148,7 @@ def clear_screen():
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def show_emoji(strInput="", print_emoji=False):
@@ -183,9 +183,7 @@ def show_emoji(strInput="", print_emoji=False):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def print_with_magic_color(strMsg: str = "", magic: bool = False):
@@ -229,9 +227,7 @@ def print_with_magic_color(strMsg: str = "", magic: bool = False):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def install_package(package_name):
@@ -259,9 +255,7 @@ def install_package(package_name):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def uninstall_package(package_name):
@@ -289,6 +283,67 @@ def uninstall_package(package_name):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
+
+
+def api_request(url: str, method='GET', data: dict = None, headers: dict = None):
+    """
+    Function used to send generic api request
+    Args : url (str): url of the api
+        method (str): method of the api request
+        data (dict): data to be sent in the request
+        headers (dict): headers to be sent in the request
+    Returns : None
+
+    """
+    import requests
+    import json
+
+    # Response section
+    status = False
+    data = None
+
+    try:
+        if headers is None:
+            headers = {"charset": "utf-8", "Content-Type": "application/json"}
+
+        if method == 'GET':
+            response = requests.get(url, params=data, headers=headers)
+        elif method == 'POST':
+            response = requests.post(
+                url, data=json.dumps(data), headers=headers)
+        elif method == 'PUT':
+            response = requests.put(
+                url, data=json.dumps(data), headers=headers)
+        elif method == 'DELETE':
+            response = requests.delete(
+                url, data=json.dumps(data), headers=headers)
+        else:
+            raise Exception("Invalid method")
+
+        if response.status_code in [200, 201, 202, 203, 204]:
+            data = response.json()
+        else:
+            raise Exception(response.text)
+    except Exception as e:
+        report_error(e)
+
+    else:
+        status = True
+    finally:
+        return [status, data]
+
+
+def image_to_text(image_path):
+
+    status = False
+    data = None
+
+    try:
+        import my_autopylot.Windows.functions.BlackBox.BlackBox as BB
+        BB.Image_2_Text(image_path)
+        status = True
+    except Exception as e:
+        report_error(e)
+    finally:
+        return [status, data]

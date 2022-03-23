@@ -79,7 +79,7 @@ class ChromeBrowser:
             status = True
 
         finally:
-            return [status]
+            return [status, None]
 
     def write(self, text: str = '', user_visible_text_element: str = ""):
         """Write a string in browser, if user_visible_text_element is given it writes on the given element.
@@ -118,7 +118,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def mouse_click(self, User_Visible_Text_Element: str = "", element: str = "", double_click: bool = False, right_click: bool = False):
         """Click on the given element.
@@ -166,7 +166,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def mouse_hover(self, User_Visible_Text_Element: str = "", element: str = "", ):
         """Performs a Mouse Hover over the Given User Visible Text Element
@@ -188,7 +188,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def scroll(self, direction: str = "down", weight=3):
         """Scrolls the browser window.
@@ -217,7 +217,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def key_press(self, key_1: str = "", key_2: str = ""):
         """Type text using Browser Helium Functions and press hot keys.
@@ -272,7 +272,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def hit_enter(self):
         """Hits enter KEY in Browser
@@ -288,7 +288,7 @@ class ChromeBrowser:
         except Exception as e:
             report_error(e)
         finally:
-            return [status]
+            return [status, None]
 
     def wait_until(self, text: str = "", element: str = "t"):
         """Wait until a specific element is found.
@@ -321,7 +321,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def refresh_page(self):
         """Refresh the current active browser page.
@@ -336,7 +336,7 @@ class ChromeBrowser:
             report_error(e)
 
         finally:
-            return [status]
+            return [status, None]
 
     def set_waiting_time(self, time: int = 10):
         """
@@ -353,7 +353,7 @@ class ChromeBrowser:
         except Exception as e:
             report_error(e)
         finally:
-            return [status]
+            return [status, None]
 
     def find_element(self, element_xpath: str = ""):
         """Find the element using xpath.
@@ -399,7 +399,7 @@ class ChromeBrowser:
         except Exception as e:
             report_error(e)
         finally:
-            return [status]
+            return [status, None]
 
     def __str__(self):
         return f"Chrome Browser with options: {self.options}"

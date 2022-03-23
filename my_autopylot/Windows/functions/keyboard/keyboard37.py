@@ -134,9 +134,7 @@ def key_press(key_1='', key_2='', key_3='', write_to_window=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def key_write_enter(text_to_write="", write_to_window="", delay_after_typing=1, key="e"):
@@ -192,9 +190,7 @@ def key_write_enter(text_to_write="", write_to_window="", delay_after_typing=1, 
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def key_hit_enter(write_to_window=""):
@@ -236,6 +232,4 @@ def key_hit_enter(write_to_window=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]

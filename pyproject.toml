@@ -53,6 +53,7 @@ colored = "^1.4.3"
 pandas = "^1.4.1"
 PyScreeze = "^0.1.28"
 Pillow = "^9.0.1"
+psutil = "^5.9.0"
 
 [tool.poetry.scripts]
 ap = "my_autopylot.cli.my_autopylot:main"

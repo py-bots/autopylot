@@ -60,6 +60,7 @@ def speech_to_text():
     energy_threshold = [3000]
 
     unknown = False
+    status = False
 
     try:
         while True:
@@ -84,7 +85,8 @@ def speech_to_text():
                         print("Speak now !!!")
                     query = recognizer.recognize_google(audio)
                     print("You said :", query)
-                    return query
+                    status = True
+                    return [status, query]
                 except AttributeError:
                     text_to_speech(
                         "Could not find PyAudio or no Microphone input device found. It may be being used by "
@@ -130,4 +132,4 @@ def text_to_speech(audio, show=True):
     else:
         status = True
     finally:
-        return status
+        return [status, ""]

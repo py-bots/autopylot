@@ -64,9 +64,7 @@ def mouse_click(x='', y='', left_or_right="left", no_of_clicks=1, type_of_moveme
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def mouse_move(x="", y="", type_of_movement="abs"):
@@ -132,9 +130,7 @@ def mouse_move(x="", y="", type_of_movement="abs"):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def mouse_drag_from_to(x1="", y1="", x2="", y2=""):
@@ -182,9 +178,7 @@ def mouse_drag_from_to(x1="", y1="", x2="", y2=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
@@ -217,6 +211,4 @@ def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
         else:
             status = False
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]

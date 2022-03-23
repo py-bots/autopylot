@@ -42,9 +42,7 @@ def excel_get_row_column_count(excel_path="", sheet_name="Sheet1", header=0):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_copy_range_from_sheet(excel_path="", sheet_name='Sheet1', startCol=0, startRow=0, endCol=0, endRow=0):
@@ -114,9 +112,7 @@ def excel_copy_range_from_sheet(excel_path="", sheet_name='Sheet1', startCol=0, 
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_copy_paste_range_from_to_sheet(excel_path="", sheet_name='Sheet1', startCol=0, startRow=0, endCol=0, endRow=0, copiedData=""):
@@ -189,9 +185,7 @@ def excel_copy_paste_range_from_to_sheet(excel_path="", sheet_name='Sheet1', sta
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_split_by_column(excel_path="", sheet_name='Sheet1', header=0, columnName=""):
@@ -244,9 +238,7 @@ def excel_split_by_column(excel_path="", sheet_name='Sheet1', header=0, columnNa
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_merge_all_files(input_folder_path="", output_folder_path=""):
@@ -300,9 +292,7 @@ def excel_merge_all_files(input_folder_path="", output_folder_path=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_drop_columns(excel_path="", sheet_name='Sheet1', header=0, columnsToBeDropped=""):
@@ -347,9 +337,7 @@ def excel_drop_columns(excel_path="", sheet_name='Sheet1', header=0, columnsToBe
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_clear_sheet(excel_path="", sheet_name="Sheet1", header=0):
@@ -386,9 +374,7 @@ def excel_clear_sheet(excel_path="", sheet_name="Sheet1", header=0):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_set_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnName="", cellNumber=0, setText=""):
@@ -433,9 +419,7 @@ def excel_set_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnNa
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_get_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnName="", cellNumber=0):
@@ -479,9 +463,7 @@ def excel_get_single_cell(excel_path="", sheet_name="Sheet1", header=0, columnNa
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_remove_duplicates(excel_path="", sheet_name="Sheet1", header=0, columnName="", saveResultsInSameExcel=True, which_one_to_keep="first"):
@@ -536,9 +518,7 @@ def excel_remove_duplicates(excel_path="", sheet_name="Sheet1", header=0, column
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_create_excel_file_in_given_folder(fullPathToTheFolder="", excelFileName="", sheet_name="Sheet1"):
@@ -589,9 +569,7 @@ def excel_create_excel_file_in_given_folder(fullPathToTheFolder="", excelFileNam
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_if_value_exists(excel_path="", sheet_name='Sheet1', header=0, usecols="", value=""):
@@ -639,9 +617,7 @@ def excel_if_value_exists(excel_path="", sheet_name='Sheet1', header=0, usecols=
         report_error(e)
 
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_to_colored_html(formatted_excel_path=""):
@@ -676,9 +652,7 @@ def excel_to_colored_html(formatted_excel_path=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_get_all_sheet_names(excelFilePath=""):
@@ -715,9 +689,7 @@ def excel_get_all_sheet_names(excelFilePath=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_get_all_header_columns(excel_path="", sheet_name="Sheet1", header=0):
@@ -753,9 +725,7 @@ def excel_get_all_header_columns(excel_path="", sheet_name="Sheet1", header=0):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def excel_describe_data(excel_path="", sheet_name='Sheet1', header=0):
@@ -798,9 +768,7 @@ def excel_describe_data(excel_path="", sheet_name='Sheet1', header=0):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def isNaN(value):
@@ -829,9 +797,7 @@ def isNaN(value):
         report_error(e)
 
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def _append_df_to_excel(filename, df, sheet_name='Sheet1', startrow=None, startcol=None,

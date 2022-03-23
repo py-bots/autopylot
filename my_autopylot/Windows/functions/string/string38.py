@@ -29,7 +29,7 @@ def string_extract_only_alphabets(inputString=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def string_extract_only_numbers(inputString=""):
@@ -59,7 +59,7 @@ def string_extract_only_numbers(inputString=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]
 
 
 def string_remove_special_characters(inputStr=""):
@@ -97,4 +97,4 @@ def string_remove_special_characters(inputStr=""):
     finally:
         if status == True and data != None:
             return [status, data]
-        return [status]
+        return [status, None]

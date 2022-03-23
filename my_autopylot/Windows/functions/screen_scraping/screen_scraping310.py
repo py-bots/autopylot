@@ -71,9 +71,7 @@ def scrape_save_contents_to_notepad(folderPathToSaveTheNotepad="", switch_to_win
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def screen_clear_search(delay=0.2):
@@ -108,9 +106,7 @@ def screen_clear_search(delay=0.2):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def search_highlight_tab_enter_open(searchText="", hitEnterKey="Yes", shift_tab='No'):
@@ -181,9 +177,7 @@ def search_highlight_tab_enter_open(searchText="", hitEnterKey="Yes", shift_tab=
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def find_text_on_screen(searchText="", delay=0.1, occurance=1, isSearchToBeCleared=False):
@@ -234,9 +228,7 @@ def find_text_on_screen(searchText="", delay=0.1, occurance=1, isSearchToBeClear
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 # Windows Specific Functions
 

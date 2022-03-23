@@ -3,8 +3,7 @@ from my_autopylot.CheckSystem import python_version, python_37, python_38, pytho
 from importlib import import_module
 import sys
 
-MODULE_NAME = 'my_autopylot.Windows.functions.api.api' + \
-    str(sys.version_info.major) + str(sys.version_info.minor)
+MODULE_NAME = 'my_autopylot.Windows.functions.BlackBox.BlackBox'
 
 if python_version in [python_37, python_38, python_39, python_310]:
     Api = import_module(MODULE_NAME)

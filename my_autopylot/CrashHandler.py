@@ -6,38 +6,56 @@ import pathlib
 import time
 
 
-def playsound(sound: Union[str, pathlib.Path], block=True) -> None:
-    from ctypes import c_buffer, windll
-    from random import random
+def _canonicalizePath(path):
+    """
+    Support passing in a pathlib.Path-like object by converting to str.
+    """
+    import sys
+    if sys.version_info[0] >= 3:
+        return str(path)
+    else:
+        # On earlier Python versions, str is a byte string, so attempting to
+        # convert a unicode string to str will fail. Leave it alone in this case.
+        return path
 
-    sound = str(sound)
-    if hasattr(sys.modules['__main__'], "__file__"):
-        sound = os.path.join(os.path.dirname(
-            sys.modules['__main__'].__file__), str(sound))
+
+def playsound(sound, block=True):
+
+    sound = '"' + _canonicalizePath(sound) + '"'
+
+    from ctypes import create_unicode_buffer, windll, wintypes
+    from time import sleep
+    windll.winmm.mciSendStringW.argtypes = [
+        wintypes.LPCWSTR, wintypes.LPWSTR, wintypes.UINT, wintypes.HANDLE]
+    windll.winmm.mciGetErrorStringW.argtypes = [
+        wintypes.DWORD, wintypes.LPWSTR, wintypes.UINT]
 
     def winCommand(*command):
-        buf = c_buffer(255)
-        command = ' '.join(command).encode(sys.getfilesystemencoding())
-        errorCode = int(windll.winmm.mciSendStringA(command, buf, 254, 0))
+        bufLen = 600
+        buf = create_unicode_buffer(bufLen)
+        command = ' '.join(command)
+        # use widestring version of the function
+        errorCode = int(windll.winmm.mciSendStringW(
+            command, buf, bufLen - 1, 0))
         if errorCode:
-            errorBuffer = c_buffer(255)
-            windll.winmm.mciGetErrorStringA(errorCode, errorBuffer, 254)
+            errorBuffer = create_unicode_buffer(bufLen)
+            # use widestring version of the function
+            windll.winmm.mciGetErrorStringW(errorCode, errorBuffer, bufLen - 1)
             exceptionMessage = ('\n    Error ' + str(errorCode) + ' for command:'
-                                '\n        ' + command.decode() +
-                                '\n    ' + errorBuffer.value.decode())
+                                '\n        ' + command +
+                                '\n    ' + errorBuffer.value)
             raise Exception(exceptionMessage)
         return buf.value
 
-    alias = 'playsound_' + str(random())
-    winCommand('open "' + sound + '" alias', alias)
-    winCommand('set', alias, 'time format milliseconds')
-    durationInMS = winCommand('status', alias, 'length')
-    winCommand('play', alias, 'from 0 to', durationInMS.decode())
-
-    if block:
-        time.sleep(float(durationInMS) / 1000.0)
-
-    winCommand('close', alias)
+    try:
+        winCommand(u'open {}'.format(sound))
+        winCommand(u'play {}{}'.format(sound, ' wait' if block else ''))
+    finally:
+        try:
+            winCommand(u'close {}'.format(sound))
+        except Exception:
+            # If it fails, there's nothing more that can be done...
+            pass
 
 
 def text_to_speech(audio, show=True):
@@ -55,29 +73,63 @@ def text_to_speech(audio, show=True):
                 print(' '.join(audio))
             else:
                 print(str(audio))
-
         tts = gTTS(text=audio, lang='en', tld='co.in')  # text to speech(voice)
-        r = random.randint(1, 20000000)
-        audio_file = 'cloint_audio' + str(r) + '.mp3'
-        tts.save(audio_file)  # save as mp3
-        playsound(audio_file)  # play the audio file
-        os.remove(audio_file)  # remove audio file
-
+        r = random.randint(1, 20000000)  # random number
+        audio_file = 'cloint_audio_' + str(r) + '.mp3'  # audio file name
+        # path to save the audio file
+        file_path = os.path.join(os.getcwd(), audio_file)
+        tts.save(file_path)  # save as mp3
+        playsound(file_path)  # play audio
+        os.remove(file_path)  # remove audio file
     except Exception as ex:
         print(str(ex))
-
     else:
         status = True
     finally:
         return status
 
 
+def install_module(module_name):
+    try:
+        import subprocess
+        subprocess.call([sys.executable, "-m", "pip",
+                        "uninstall", module_name])
+    except:
+        text_to_speech("Sorry, I could not install the module {}".format(
+            module_name))
+
+
+def uninstall_module(module_name):
+    try:
+        if module_name != "my_autopylot":
+            import subprocess
+            subprocess.call([sys.executable, "-m", "pip",
+                            "uninstall", "-y", module_name])
+        else:
+            text_to_speech("You cannot uninstall my_autopylot from here.")
+    except:
+        text_to_speech("Sorry, I could not uninstall the module {}".format(
+            module_name))
+
+
+def install_pyaudio():
+    import sys
+    import subprocess
+    _version_1 = str(sys.version_info.major) + str(sys.version_info.minor)
+
+    if _version_1 == "37":
+        _version_2 = "37m"
+    else:
+        _version_2 = _version_1
+
+    _module = f"https://raw.githubusercontent.com/py-bots/my-autopylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
+    subprocess.call([sys.executable, "-m", "pip", "install", _module])
+
+
 def report_error(ex: Exception):
 
     exception_name = type(ex).__name__
     exception_message = str(ex)
-    exception_line = ex.__traceback__.tb_lineno
-    # exception_file = ex.__traceback__.tb_frame.f_code.co_filename
 
     if "SystemExit" in exception_name:
         text_to_speech("Exiting!")
@@ -270,49 +322,10 @@ def report_error(ex: Exception):
                 exception_line))
 
     else:
-        text_to_speech("You got a {}. It describes as {}. Look at line number {}".format(
-            exception_name, exception_message, exception_line))
-
-
-def install_module(module_name):
-    try:
-        import subprocess
-        subprocess.call([sys.executable, "-m", "pip",
-                        "uninstall", module_name])
-    except:
-        text_to_speech("Sorry, I could not install the module {}".format(
-            module_name))
-
-
-def uninstall_module(module_name):
-    try:
-        if module_name != "my_autopylot":
-            import subprocess
-            subprocess.call([sys.executable, "-m", "pip",
-                            "uninstall", "-y", module_name])
-        else:
-            text_to_speech("You cannot uninstall my_autopylot from here.")
-    except:
-        text_to_speech("Sorry, I could not uninstall the module {}".format(
-            module_name))
-
-
-def install_pyaudio():
-    import sys
-    import subprocess
-    _version_1 = str(sys.version_info.major) + str(sys.version_info.minor)
-
-    if _version_1 == "37":
-        _version_2 = "37m"
-    else:
-        _version_2 = _version_1
-
-    _module = f"https://raw.githubusercontent.com/py-bots/my-autopylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
-    subprocess.call([sys.executable, "-m", "pip", "install", _module])
-
-# try:
-#     # x = 2 /0
-#     raise IndexError
-# except Exception as ex:
-#     centralized_exception_hanlder(traceback.format_exception(*sys.exc_info(),limit=None, chain=True)) #this function can be called within crash_report. It needs same arguments
-#     # selft.crash_report(traceback.format_exception(*sys.exc_info(),limit=None, chain=True))
+        from my_autopylot.Windows.functions.BlackBox.BlackBox import Report_Developer
+        try:
+            Report_Developer(ex)
+        except:
+            pass
+        text_to_speech("You got a {}. It describes as {}.".format(
+            exception_name, exception_message))

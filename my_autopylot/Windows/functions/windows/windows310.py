@@ -59,9 +59,7 @@ def window_show_desktop():
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_get_active_window():
@@ -89,9 +87,7 @@ def window_get_active_window():
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_activate_window(window_title=''):
@@ -135,9 +131,7 @@ def window_activate_window(window_title=''):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_get_all_opened_titles_windows():
@@ -172,9 +166,7 @@ def window_get_all_opened_titles_windows():
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_activate_and_maximize_windows(windowName=""):
@@ -222,9 +214,7 @@ def window_activate_and_maximize_windows(windowName=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_minimize_windows(windowName=""):
@@ -264,9 +254,7 @@ def window_minimize_windows(windowName=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_close_windows(windowName=""):
@@ -306,9 +294,7 @@ def window_close_windows(windowName=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def launch_any_exe_bat_application(pathOfExeFile=""):
@@ -353,13 +339,11 @@ def launch_any_exe_bat_application(pathOfExeFile=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
 
 
 def window_restore_windows(windowName=""):
-    
+
     # Description:
     """
     Restores the desired window.
@@ -395,6 +379,4 @@ def window_restore_windows(windowName=""):
     else:
         status = True
     finally:
-        if status is True and data is not None:
-            return [status, data]
-        return [status]
+        return [status, data]
