@@ -24,7 +24,6 @@ pyrect==0.2.0
 pyscreeze==0.1.28
 python-dateutil==2.8.2; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
 pytz==2022.1; python_version >= "3.8"
-pywin32==303
 pywinauto==0.6.8
 requests==2.27.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
 rich==11.2.0; python_full_version >= "3.6.2" and python_full_version < "4.0.0"
