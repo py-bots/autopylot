@@ -55,16 +55,18 @@ Windows :
 
 -  Code Editor or IDE : Import My-AutoPylot first, and then run the file in Python.
 
-      # ap_bot.py
+   ::
+
+      # filename : ap_bot.py
 
       import my_autopylot as ap
 
       ap.windows_launch_app('notepad')
 
-   ::
       
-      Save the file and run it.
-      Run the file using the command " python ap_bot.py "
+Save the file and run it.
+
+Run the file using the command " python ap_bot.py "
 
 
 My-AutoPylot in Action
