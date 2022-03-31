@@ -195,18 +195,16 @@ def mouse_search_snip_return_coordinates_x_y(img="", wait=10):
     try:
         if not img:
             raise Exception("Image path is required.")
-        pos = ps.locateCenterOnScreen(img)
-        while pos == None and i < int(wait):
-            time.sleep(1)
-            pos = ps.locateCenterOnScreen(img)
-            i += 1
-        if pos:
-            data = (pos[0], pos[1])
-
+        pos = ps.locateCenterOnScreen(img, minSearchTime=wait)
+        # while pos == None and i < int(wait):
+        #     time.sleep(1)
+        #     pos = ps.locateCenterOnScreen(img)
+        #     i += 1
     except Exception as e:
         report_error(e)
     else:
         if pos:
+            data = [pos[0], pos[1]]
             status = True
         else:
             status = False
