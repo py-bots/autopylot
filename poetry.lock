@@ -431,7 +431,7 @@ requests = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<=3.9.40"
-content-hash = "bfdcceb92b4d4f4139e5fd689190755b636d2625169f5bcd0043b070b310b1fa"
+content-hash = "76ce7e3bc758b19ee03cb3e9813fd065aa57c583dd7dac499cc6ddd68914aaad"
 
 [metadata.files]
 autopep8 = [
