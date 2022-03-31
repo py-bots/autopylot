@@ -76,9 +76,12 @@ if compatible_system:
     from my_autopylot.Engine import speech_to_text
 
     # ---------  Excel Functions | Current Count : 18
+    from my_autopylot.Engine import excel_get_all_sheet_names
+    from my_autopylot.Engine import excel_create_excel_file_in_given_folder
+    from my_autopylot.Engine import excel_if_value_exists
+    from my_autopylot.Engine import excel_copy_paste_range_from_to_sheet
     from my_autopylot.Engine import excel_get_row_column_count
     from my_autopylot.Engine import excel_copy_range_from_sheet
-    from my_autopylot.Engine import excel_copy_paste_range_from_to_sheet
     from my_autopylot.Engine import excel_split_by_column
     from my_autopylot.Engine import excel_split_the_file_on_row_count
     from my_autopylot.Engine import excel_merge_all_files
@@ -87,13 +90,10 @@ if compatible_system:
     from my_autopylot.Engine import excel_set_single_cell
     from my_autopylot.Engine import excel_get_single_cell
     from my_autopylot.Engine import excel_remove_duplicates
-    from my_autopylot.Engine import excel_create_excel_file_in_given_folder
-    from my_autopylot.Engine import excel_if_value_exists
-    from my_autopylot.Engine import excel_to_colored_html
-    from my_autopylot.Engine import excel_get_all_sheet_names
     from my_autopylot.Engine import excel_get_all_header_columns
-    from my_autopylot.Engine import excel_describe_data
+    from my_autopylot.Engine import excel_to_colored_html
     from my_autopylot.Engine import isNaN
+    from my_autopylot.Engine import excel_describe_data
 
     # ---------  API Functions | Current Count : 1
     from my_autopylot.Engine import image_to_text

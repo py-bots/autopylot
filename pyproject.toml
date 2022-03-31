@@ -7,7 +7,7 @@ license = "BSD"
 readme = "README.md"
 homepage = ""
 repository = ""
-documentation = "https://auto-pylot.readthedocs.io/"
+documentation = "https://my-autopylot.readthedocs.io/"
 keywords = ["PyBots","autopilot","auto pylot","RPA","Python","Automation","BOT","Software BOT","Auto Pilot","Dost"]
 classifiers = [
     'Development Status :: 4 - Beta',
@@ -43,6 +43,7 @@ pyfiglet = "^0.8.post1"
 rich = "^11.2.0"
 gTTS = "^2.2.3"
 SpeechRecognition = "^3.8.1"
+pywinauto = "^0.6.8"
 speedtest-cli = "^2.1.3"
 helium = "^3.0.8"
 webdriver-manager = "^3.5.3"
