@@ -1,10 +1,3 @@
-import traceback
-import sys
-import os
-from typing import Union
-import pathlib
-import time
-
 
 def _canonicalizePath(path):
     """
@@ -92,6 +85,7 @@ def text_to_speech(audio, show=True):
 def install_module(module_name):
     try:
         import subprocess
+        import sys
         subprocess.call([sys.executable, "-m", "pip",
                         "uninstall", module_name])
     except:
@@ -103,6 +97,7 @@ def uninstall_module(module_name):
     try:
         if module_name != "my_autopylot":
             import subprocess
+            import sys
             subprocess.call([sys.executable, "-m", "pip",
                             "uninstall", "-y", module_name])
         else:
@@ -123,7 +118,8 @@ def install_pyaudio():
         _version_2 = _version_1
 
     _module = f"https://raw.githubusercontent.com/py-bots/my-autopylot/main/support/whls/PyAudio-0.2.11-cp{_version_1}-cp{_version_2}-win_amd64.whl"
-    subprocess.call([sys.executable, "-m", "pip", "install", _module])
+    subprocess.call([sys.executable, "-m", "pip", "install", _module],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 def report_error(ex: Exception):
@@ -328,5 +324,6 @@ def report_error(ex: Exception):
             BB.Report_Developer(ex)
         except:
             pass
-        text_to_speech("You got a {}. It describes as {}.".format(
-            exception_name, exception_message))
+        if exception_message != "First Run":
+            text_to_speech("You got a {}. It describes as {}.".format(
+                exception_name, exception_message))

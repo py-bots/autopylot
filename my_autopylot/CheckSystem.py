@@ -128,6 +128,21 @@ def check_req():
         from my_autopylot.CrashHandler import report_error
         report_error(ex)
         return False
+    try:
+        import subprocess
+        from my_autopylot.CrashHandler import report_error
+        is_installed = os.environ.get("MY_AUTOPYLOT")
+        if is_installed is None:
+            subprocess.call(f"setx MY_AUTOPYLOT True", shell=True,
+                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                raise Exception("First Run")
+            except Exception as e:
+                report_error(e)
+    except Exception as ex:
+        from my_autopylot.CrashHandler import report_error
+        report_error(ex)
+        return False
     return True
 
 

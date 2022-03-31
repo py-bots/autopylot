@@ -19,7 +19,7 @@ blackbox = import_module(f'my_autopylot.{Platform}.functions.blackbox')
 # ---------  Mouse Functions ---------
 
 
-def mouse_click(x='5', y='5', left_or_right="left", no_of_clicks=1):
+def mouse_click(x='5', y='5', left_or_right="left", no_of_clicks=1, type_of_movement="abs"):
     """Clicks at the given X Y Co-ordinates on the screen using single / double / triple click(s). Default clicks on current position.
     Args:
         x (int): x-coordinate on screen.
@@ -30,23 +30,25 @@ def mouse_click(x='5', y='5', left_or_right="left", no_of_clicks=1):
         Eg: right or left, Defaults: left.
         no_of_click (int, optional): Number of times specified mouse button to be clicked.
         Eg: 1 or 2, Max 3. Defaults: 1.
+        type_of_movement (str, optional): Type of movement.
     Returns: [status]
         bool: Whether the function is successful or failed.
     """
-    return mouse.Mouse.mouse_click(x, y, left_or_right, no_of_clicks)
+    return mouse.Mouse.mouse_click(x, y, left_or_right, no_of_clicks, type_of_movement)
 
 
-def mouse_move(x="5", y="5"):
+def mouse_move(x="5", y="5", type_of_movement="abs"):
     """Moves the cursor to the given X Y Co-ordinates.
     Args:
         x (int): x-coordinate on screen.
         Eg: 369 or 435, Defaults: ''.
         y (int): y-coordinate on screen.
         Eg: 369 or 435, Defaults: ''.
+        type_of_movement (str, optional): Type of movement.
     Returns: [status]
         bool: Whether the function is successful or failed.
     """
-    return mouse.Mouse.mouse_move(x, y)
+    return mouse.Mouse.mouse_move(x, y, type_of_movement)
 
 
 def mouse_drag_from_to(x1="5", y1="5", x2="10", y2="10", delay=0.5):
