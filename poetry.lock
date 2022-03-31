@@ -94,14 +94,6 @@ python-versions = "*"
 test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 
 [[package]]
-name = "comtypes"
-version = "1.1.11"
-description = "Pure Python COM package"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "emoji"
 version = "1.7.0"
 description = "Emoji for Python"
@@ -299,27 +291,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "pywin32"
-version = "303"
-description = "Python for Window Extensions"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "pywinauto"
-version = "0.6.8"
-description = "A set of Python modules to automate the Microsoft Windows GUI"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-comtypes = "*"
-pywin32 = "*"
-six = "*"
-
-[[package]]
 name = "requests"
 version = "2.27.1"
 description = "Python HTTP for Humans."
@@ -431,7 +402,7 @@ requests = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<=3.9.40"
-content-hash = "76ce7e3bc758b19ee03cb3e9813fd065aa57c583dd7dac499cc6ddd68914aaad"
+content-hash = "6cc5caaf42f0c356da05ccf39f5fa040bf94976ceeef26944731eff59657f3b8"
 
 [metadata.files]
 autopep8 = [
@@ -467,10 +438,6 @@ colored = [
 commonmark = [
     {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
     {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
-]
-comtypes = [
-    {file = "comtypes-1.1.11-py2.py3-none-any.whl", hash = "sha256:bc4fd1c20bdd960cdf1763020c0480332c2382f70260aa424fc019f5ce27263b"},
-    {file = "comtypes-1.1.11.zip", hash = "sha256:5c4c4832dce61de44b956c8cfafcca7e94f5016d564632c2b25846e88820c7f8"},
 ]
 emoji = [
     {file = "emoji-1.7.0.tar.gz", hash = "sha256:65c54533ea3c78f30d0729288998715f418d7467de89ec258a31c0ce8660a1d1"},
@@ -647,24 +614,6 @@ python-dateutil = [
 pytz = [
     {file = "pytz-2022.1-py2.py3-none-any.whl", hash = "sha256:e68985985296d9a66a881eb3193b0906246245294a881e7c8afe623866ac6a5c"},
     {file = "pytz-2022.1.tar.gz", hash = "sha256:1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7"},
-]
-pywin32 = [
-    {file = "pywin32-303-cp310-cp310-win32.whl", hash = "sha256:6fed4af057039f309263fd3285d7b8042d41507343cd5fa781d98fcc5b90e8bb"},
-    {file = "pywin32-303-cp310-cp310-win_amd64.whl", hash = "sha256:51cb52c5ec6709f96c3f26e7795b0bf169ee0d8395b2c1d7eb2c029a5008ed51"},
-    {file = "pywin32-303-cp311-cp311-win32.whl", hash = "sha256:d9b5d87ca944eb3aa4cd45516203ead4b37ab06b8b777c54aedc35975dec0dee"},
-    {file = "pywin32-303-cp311-cp311-win_amd64.whl", hash = "sha256:fcf44032f5b14fcda86028cdf49b6ebdaea091230eb0a757282aa656e4732439"},
-    {file = "pywin32-303-cp36-cp36m-win32.whl", hash = "sha256:aad484d52ec58008ca36bd4ad14a71d7dd0a99db1a4ca71072213f63bf49c7d9"},
-    {file = "pywin32-303-cp36-cp36m-win_amd64.whl", hash = "sha256:2a09632916b6bb231ba49983fe989f2f625cea237219530e81a69239cd0c4559"},
-    {file = "pywin32-303-cp37-cp37m-win32.whl", hash = "sha256:b1675d82bcf6dbc96363fca747bac8bff6f6e4a447a4287ac652aa4b9adc796e"},
-    {file = "pywin32-303-cp37-cp37m-win_amd64.whl", hash = "sha256:c268040769b48a13367221fced6d4232ed52f044ffafeda247bd9d2c6bdc29ca"},
-    {file = "pywin32-303-cp38-cp38-win32.whl", hash = "sha256:5f9ec054f5a46a0f4dfd72af2ce1372f3d5a6e4052af20b858aa7df2df7d355b"},
-    {file = "pywin32-303-cp38-cp38-win_amd64.whl", hash = "sha256:793bf74fce164bcffd9d57bb13c2c15d56e43c9542a7b9687b4fccf8f8a41aba"},
-    {file = "pywin32-303-cp39-cp39-win32.whl", hash = "sha256:7d3271c98434617a11921c5ccf74615794d97b079e22ed7773790822735cc352"},
-    {file = "pywin32-303-cp39-cp39-win_amd64.whl", hash = "sha256:79cbb862c11b9af19bcb682891c1b91942ec2ff7de8151e2aea2e175899cda34"},
-]
-pywinauto = [
-    {file = "pywinauto-0.6.8-py2.py3-none-any.whl", hash = "sha256:931ce622d7f402b1892ab472987a1332e4c0681bf87e106f798390d16ca95e58"},
-    {file = "pywinauto-0.6.8.tar.gz", hash = "sha256:de23f1e977cc51e7eddd95c8f365710343136433968d1e2ad377962d6bd6540a"},
 ]
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
