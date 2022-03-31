@@ -68,3 +68,9 @@ autopep8 = "^1.6.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+[project]
+name = "My-AutoPylot"
+authors = [{name = "PyBots", email = "support@pybots.ai"}]
+dynamic = ["0.0.5", "Auto-Pylot is a Python based RPA platform for Software BOT development as an Open Source project. We strive to liberate humans from mundane, repetitive tasks, giving them more time to use their intellect and creativity to solve higher-order business challenges and perform knowledge work. We see a world where every employee will work side by side with Digital Workers, taking the robot out of the human, making them exponentially more productive and far more fulfilled."]
