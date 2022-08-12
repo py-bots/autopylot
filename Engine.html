@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>my_autopylot.Engine API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>my_autopylot.Engine</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="my_autopylot.Engine.citrix_scrape_contents_by_search_copy_paste"><code class="name flex">
+<span>def <span class="ident">citrix_scrape_contents_by_search_copy_paste</span></span>(<span>highlight_text='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Scrapes the contents of the highlighted text.</p>
+<h2 id="parameters">Parameters</h2>
+<p>highlight_text
+(str) : text to be highlighted.
+Returns: [status,data]
+data (str) : scraped text.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.citrix_window_clear_search"><code class="name flex">
+<span>def <span class="ident">citrix_window_clear_search</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clears previously found text (ctrl+f highlight)
+Returns: [status]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_base64_to_img"><code class="name flex">
+<span>def <span class="ident">convert_base64_to_img</span></span>(<span>imgBase64Str='', img_folder_path='', img_file_name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>imgFileName</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>imgBase64Str</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>img_folder_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_change_corrupt_xls_to_xlsx"><code class="name flex">
+<span>def <span class="ident">convert_change_corrupt_xls_to_xlsx</span></span>(<span>input_file='', input_sheetname='', output_folder='', output_filename='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Repair corrupt file to regular file and then convert it to xlsx.
+status : Done.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_csv_to_excel"><code class="name flex">
+<span>def <span class="ident">convert_csv_to_excel</span></span>(<span>csv_path='', sep=',', excel_output_folder_path='', excel_file_name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>csv_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>sep</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>excel_output_folder_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>excel_file_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_excel_to_colored_html"><code class="name flex">
+<span>def <span class="ident">convert_excel_to_colored_html</span></span>(<span>input_filepath='', output_folder='', output_filename='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts given Excel to HTML preserving the Excel format and saves in same folder as .html</p></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_image_to_base64"><code class="name flex">
+<span>def <span class="ident">convert_image_to_base64</span></span>(<span>input_file='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Convert image to base64 string.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_file</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_jpg_to_png"><code class="name flex">
+<span>def <span class="ident">convert_jpg_to_png</span></span>(<span>input_image_path='', output_folder='', output_filename='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert the image from jpg to png</p>
+<p>Args:
+input_image_path (str): The path of the input image
+output_folder (str): The path of the output folder</p>
+<p>Returns:
+[bool]: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_png_to_jpg"><code class="name flex">
+<span>def <span class="ident">convert_png_to_jpg</span></span>(<span>input_image_path='', output_folder='', output_filename='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert the image from png to jpg</p>
+<p>Args:
+input_image_path (str): The path of the input image
+output_folder (str): The path of the output folder</p>
+<p>Returns:
+[bool]: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.convert_xls_to_xlsx"><code class="name flex">
+<span>def <span class="ident">convert_xls_to_xlsx</span></span>(<span>input_file='', output_folder='', output_filename='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts given XLS file to XLSX</p></div>
+</dd>
+<dt id="my_autopylot.Engine.ds_describe_excel_data"><code class="name flex">
+<span>def <span class="ident">ds_describe_excel_data</span></span>(<span>input_filepath='', input_sheetname='Sheet1', header=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Describe statistical data for the given excel</p></div>
+</dd>
+<dt id="my_autopylot.Engine.ds_draw_charts_from_excel"><code class="name flex">
+<span>def <span class="ident">ds_draw_charts_from_excel</span></span>(<span>input_filepath='', input_sheetname='Sheet1', header=0, x_col='', y_col='', chart_type='bar', title='PyBOTs Chart')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interactive data visualization function, which accepts excel file, X &amp; Y column.
+Chart types accepted are bar , scatter , pie , sun , histogram , box
+, strip.
+You can pass color column as well, having a boolean value.
+Image gets saved as .PNG in the same path as excel file.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.ds_html_table_from_website"><code class="name flex">
+<span>def <span class="ident">ds_html_table_from_website</span></span>(<span>website_url='', output_folder='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Web Scrape HTML Tables : Gets Website Table Data Easily as an Excel using Pandas. Just pass the URL of Website having HTML Tables.
+If there are 5 tables on that HTML page and you want 4th table, pass table_index as 3</p>
+<p>Ex: browser_get_html_tabular_data_from_website(Website_URL=URL)</p></div>
+</dd>
+<dt id="my_autopylot.Engine.ds_pivot_excel_table"><code class="name flex">
+<span>def <span class="ident">ds_pivot_excel_table</span></span>(<span>input_filepath='', input_sheetname='Sheet1', header=0, rows=[], cols=[])</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_filepath</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>input_sheetname</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "Sheet1".</dd>
+<dt><strong><code>header</code></strong> :&ensp;<code>int</code></dt>
+<dd>[description]. Defaults to 0.</dd>
+<dt><strong><code>rows</code></strong> :&ensp;<code>list</code></dt>
+<dd>[description]. Defaults to [].</dd>
+<dt><strong><code>cols</code></strong> :&ensp;<code>list</code></dt>
+<dd>[description]. Defaults to [].</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.file_get_json_details"><code class="name flex">
+<span>def <span class="ident">file_get_json_details</span></span>(<span>path_of_json_file='', section='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns all the details of the given section in a dictionary</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_of_json_file</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the json file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+<dt><strong><code>section</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Section of the json file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Text.txt, Defaults to "".</dd>
+</dl>
+<p>Returns: [status,data]
+bool: Whether the function is successful or failed.
+data: Data of the given section in a dictionary.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.file_rename"><code class="name flex">
+<span>def <span class="ident">file_rename</span></span>(<span>old_file_path='', new_file_name='', print_status=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renames the given file name to new file name with same extension</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>old_file_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+<dt><strong><code>new_file_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>New name of the file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Text.txt, Defaults to "".</dd>
+<dt><strong><code>print_status</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to print the status of the function. Defaults to True.</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_create"><code class="name flex">
+<span>def <span class="ident">folder_create</span></span>(<span>strFolderPath='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a folder at the given path</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>strFolderPath</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the folder.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_create_text_file"><code class="name flex">
+<span>def <span class="ident">folder_create_text_file</span></span>(<span>textFolderPath='', txtFileName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a text file at the given path</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>textFolderPath</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the folder.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+<dt><strong><code>txtFileName</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of the text file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Text.txt, Defaults to "".</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_delete_all_files"><code class="name flex">
+<span>def <span class="ident">folder_delete_all_files</span></span>(<span>fullPathOfTheFolder='', file_extension_without_dot='all', print_status=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes all the files of the given folder</p>
+<h2 id="parameters">Parameters</h2>
+<p>fullPathOfTheFolder
+(str) : Location of the folder.
+extension
+(str) : extension of the file. by default all the files will be deleted inside the given folder
+regardless of the extension.
+returns:[status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_get_all_filenames_as_list"><code class="name flex">
+<span>def <span class="ident">folder_get_all_filenames_as_list</span></span>(<span>strFolderPath='', extension='all')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all the files of the given folder in a list.</p>
+<h2 id="parameters">Parameters</h2>
+<p>strFolderPath
+(str) : Location of the folder.
+extension
+(str) : extention of the file. by default all the files will be listed regardless of the extension.
+returns: [status,data]
+allFilesOfaFolderAsLst (List) : all the file names as a list.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_read_text_file"><code class="name flex">
+<span>def <span class="ident">folder_read_text_file</span></span>(<span>txt_file_path='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads from a given text file and returns entire contents as a single list</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>txt_file_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the text file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+</dl>
+<p>Returns: [status,data]
+bool: If function is failed returns False.
+list: Text file contents.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.folder_write_text_file"><code class="name flex">
+<span>def <span class="ident">folder_write_text_file</span></span>(<span>txt_file_path='', contents='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes given contents to a text file</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>txt_file_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the text file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Text.txt, Defaults to "".</dd>
+<dt><strong><code>contents</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Text you want to write to the text file.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>ClointFusion is awesone. Defaults to "".</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.image_to_text"><code class="name flex">
+<span>def <span class="ident">image_to_text</span></span>(<span>img_path='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads the text from the image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the image. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Image.png, Defaults to "".</dd>
+</dl>
+<p>Returns: [status,data]
+bool: If function is failed returns False.
+str: Text from image.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.img_camera_capture"><code class="name flex">
+<span>def <span class="ident">img_camera_capture</span></span>(<span>folder_path='', file_name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Capture an image from the camera and save it to the given folder path.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>folder_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The folder path to save the image.</dd>
+<dt><strong><code>file_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The file name to save the image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The full path of the image.</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.key_hit_enter"><code class="name flex">
+<span>def <span class="ident">key_hit_enter</span></span>(<span>write_to_window='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enter key will be pressed once.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>write_to_window</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>(Only in Windows)Name of Window you want to activate.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Notepad. Defaults to "".</dd>
+</dl>
+<p>Returns:[status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.key_press"><code class="name flex">
+<span>def <span class="ident">key_press</span></span>(<span>key_1='', key_2='', key_3='', write_to_window='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Emulates the given keystrokes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key_1</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Enter the 1st key </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>ctrl or shift. Defaults to ''.</dd>
+<dt><strong><code>key_2</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Enter the 2nd key in combination. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>alt or A. Defaults to ''.</dd>
+<dt><strong><code>key_3</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Enter the 3rd key in combination. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>del or tab. Defaults to ''.</dd>
+<dt><strong><code>write_to_window</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>(Only in Windows) Name of Window you want to activate. Defaults to "".</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.key_write_enter"><code class="name flex">
+<span>def <span class="ident">key_write_enter</span></span>(<span>text_to_write='Clointfusion is awesome', write_to_window='', key='e')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes/Types the given text.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text_to_write</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Text you wanted to type</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>ClointFusion is awesone. Defaults to "".</dd>
+<dt><strong><code>write_to_window</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>(Only in Windows) Name of Window you want to activate</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Notepad. Defaults to "".</dd>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Press Enter key after typing.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>t for tab. Defaults to e</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.mail_send_gmail_with_app_password"><code class="name flex">
+<span>def <span class="ident">mail_send_gmail_with_app_password</span></span>(<span>gmail_username='', gmail_app_password='', to_email_id='', subject='', message='', attachment_path='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>gmail_username</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>gmail_app_password</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>to_email_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>subject</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>attachment_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.mail_send_via_desktop_outlook"><code class="name flex">
+<span>def <span class="ident">mail_send_via_desktop_outlook</span></span>(<span>to_email_id='', subject='', message='', attachment_path='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send email using Outlook from Desktop email application</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>to_email_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>subject</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>attachment_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.mouse_click"><code class="name flex">
+<span>def <span class="ident">mouse_click</span></span>(<span>x='5', y='5', left_or_right='left', no_of_clicks=1, type_of_movement='abs')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clicks at the given X Y Co-ordinates on the screen using single / double / triple click(s). Default clicks on current position.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>int</code></dt>
+<dd>x-coordinate on screen.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt><strong><code>y</code></strong> :&ensp;<code>int</code></dt>
+<dd>y-coordinate on screen.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt><strong><code>left_or_right</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Which mouse button.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>right or left, Defaults: left.</dd>
+<dt><strong><code>no_of_click</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of times specified mouse button to be clicked.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>1 or 2, Max 3. Defaults: 1.</dd>
+<dt><strong><code>type_of_movement</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Type of movement.</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.mouse_drag_from_to"><code class="name flex">
+<span>def <span class="ident">mouse_drag_from_to</span></span>(<span>x1='5', y1='5', x2='10', y2='10')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clicks and drags from x1 y1 co-ordinates to x2 y2 Co-ordinates on the screen</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>x1 or x2 (int): x-coordinate on screen.</dt>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt>y1 or y2 (int): y-coordinate on screen.</dt>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt><strong><code>delay</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Seconds to wait while performing action. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>1 or 0.5, Defaults to 0.5.</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.mouse_move"><code class="name flex">
+<span>def <span class="ident">mouse_move</span></span>(<span>x='5', y='5', type_of_movement='abs')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves the cursor to the given X Y Co-ordinates.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>int</code></dt>
+<dd>x-coordinate on screen.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt><strong><code>y</code></strong> :&ensp;<code>int</code></dt>
+<dd>y-coordinate on screen.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>369 or 435, Defaults: ''.</dd>
+<dt><strong><code>type_of_movement</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Type of movement.</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.mouse_search_snip_return_coordinates_x_y"><code class="name flex">
+<span>def <span class="ident">mouse_search_snip_return_coordinates_x_y</span></span>(<span>img='', wait=180)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Searches the given image on the screen and returns its center of X Y co-ordinates.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>img</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the image. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>D:\Files\Image.png, Defaults to "".</dd>
+<dt><strong><code>wait</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Time you want to wait while program searches for image repeatably.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>10 or 100 Defaults to 180.</dd>
+</dl>
+<p>Returns: [status,data]
+bool: If function is failed returns False.
+tuple (x, y): Image Center co-ordinates.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.msg_box_ask_yes_no"><code class="name flex">
+<span>def <span class="ident">msg_box_ask_yes_no</span></span>(<span>msg_for_user='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>msg_for_user</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[response] Whether the user has clicked yes(True) or no(False).</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.msg_box_info"><code class="name flex">
+<span>def <span class="ident">msg_box_info</span></span>(<span>msg_for_user='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>msg_for_user</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.msg_count_down"><code class="name flex">
+<span>def <span class="ident">msg_count_down</span></span>(<span>msg_for_user='', default_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>msg_for_user</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]</dd>
+<dt><strong><code>default_time</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>[description]. Defaults to 5.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status]</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.pdf_extract_all_tables"><code class="name flex">
+<span>def <span class="ident">pdf_extract_all_tables</span></span>(<span>pdf_file_path='', output_folder='', output_file_name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract all tables from a pdf file and save them to a text file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pdf_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+<dt><strong><code>output_folder</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>[description]. Defaults to "".</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.schedule_code"><code class="name flex">
+<span>def <span class="ident">schedule_code</span></span>(<span>code, bot_name, weekly_or_daily, week_day, time_24_hrs)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Schedules the given python code using Windows Task Scheduler.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>code</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>bot_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>weekly_or_daily</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>week_day</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>time_24_hrs</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status].</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.schedule_delete_task"><code class="name flex">
+<span>def <span class="ident">schedule_delete_task</span></span>(<span>bot_name='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Deletes already scheduled task. Asks user to supply task_name used during scheduling the task. You can also perform this action from Windows Task Scheduler.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bot_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description]. Defaults to "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status].</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.schedule_py_file"><code class="name flex">
+<span>def <span class="ident">schedule_py_file</span></span>(<span>filepath, bot_name, weekly_or_daily, week_day, time_24_hrs)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Schedules the given .py file using Windows Task Scheduler.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>filepath</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>bot_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>weekly_or_daily</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>week_day</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+<dt><strong><code>time_24_hrs</code></strong> :&ensp;<code>str</code></dt>
+<dd>[description].</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>[bool]</code></dt>
+<dd>[status].</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.Engine.speech_to_text"><code class="name flex">
+<span>def <span class="ident">speech_to_text</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Speech to Text using Google's Generic API
+Returns: [status,data]
+bool: Whether the function is successful or failed.
+data: Text converted from speech.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.string_extract_only_alphabets"><code class="name flex">
+<span>def <span class="ident">string_extract_only_alphabets</span></span>(<span>inputString='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns only alphabets from given input string</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>inputString</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Input string. Defaults to "".</dd>
+</dl>
+<p>Returns: [status,data]
+bool: Whether the function is successful or failed.
+data: Only alphabets from given input string.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.string_extract_only_numbers"><code class="name flex">
+<span>def <span class="ident">string_extract_only_numbers</span></span>(<span>inputString='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns only numbers from given input string</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>inputString</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Input string. Defaults to "".</dd>
+</dl>
+<p>Returns: [status,data]
+bool: Whether the function is successful or failed.
+data: Only numbers from given input string.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.string_remove_special_characters"><code class="name flex">
+<span>def <span class="ident">string_remove_special_characters</span></span>(<span>inputStr='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes all the special character.</p>
+<h2 id="parameters">Parameters</h2>
+<p>inputStr
+(str) : string for removing all the special character in it.
+Returns : [status,data]
+outputStr (str) : returns the alphanumeric string</p></div>
+</dd>
+<dt id="my_autopylot.Engine.text_to_speech"><code class="name flex">
+<span>def <span class="ident">text_to_speech</span></span>(<span>audio, show=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Text to Speech using Google's Generic API</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>audio</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text to be converted to speech.</dd>
+<dt><strong><code>show</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to show the audio. Defaults to True.</dd>
+</dl>
+<p>Returns: [status]
+bool: Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_activate_and_maximize_windows"><code class="name flex">
+<span>def <span class="ident">window_activate_and_maximize_windows</span></span>(<span>windowName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Activates and maximizes the desired window.</p>
+<h2 id="parameters">Parameters</h2>
+<p>windowName
+(str) : Name of the window to maximize.
+Returns: [status]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_activate_window"><code class="name flex">
+<span>def <span class="ident">window_activate_window</span></span>(<span>window_title='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Activates the given window.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_close_windows"><code class="name flex">
+<span>def <span class="ident">window_close_windows</span></span>(<span>windowName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Close the desired window.</p>
+<h2 id="parameters">Parameters</h2>
+<p>windowName
+(str) : Name of the window to close.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_get_active_window"><code class="name flex">
+<span>def <span class="ident">window_get_active_window</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the active window title.
+Returns : [status,data]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_get_all_opened_titles_windows"><code class="name flex">
+<span>def <span class="ident">window_get_all_opened_titles_windows</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gives the title of all the existing (open) windows.
+Returns: [status,data]
+allTitles_lst
+(list) : returns all the titles of the window as list.</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_minimize_windows"><code class="name flex">
+<span>def <span class="ident">window_minimize_windows</span></span>(<span>windowName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Activates and minimizes the desired window.</p>
+<h2 id="parameters">Parameters</h2>
+<p>windowName
+(str) : Name of the window to miniimize.
+Returns: [status]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.window_restore_windows"><code class="name flex">
+<span>def <span class="ident">window_restore_windows</span></span>(<span>windowName='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Restores the given window.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>windowName</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of the window you want to restore.</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Notepad. Defaults to "".</dd>
+</dl>
+<p>Returns: [status]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.windows_launch_app"><code class="name flex">
+<span>def <span class="ident">windows_launch_app</span></span>(<span>pathOfExeFile='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Launches any exe or batch file or excel file etc.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pathOfExeFile</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Location of the file with extension</dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Notepad, TextEdit. Defaults to "".</dd>
+</dl>
+<p>Returns [status]</p></div>
+</dd>
+<dt id="my_autopylot.Engine.windows_show_desktop"><code class="name flex">
+<span>def <span class="ident">windows_show_desktop</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Minimizes all the applications and shows Desktop.</p>
+<h2 id="returns">Returns</h2>
+<p>[status:bool]</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="My-AutoPylot" href="https://py-bots.github.io/my-autopylot/docs">
+<img src="https://raw.githubusercontent.com/py-bots/media-pyles/main/pybots/PyBots%20Logo.png" alt="My-AutoPylot"> My-AutoPylot
+</a>
+</header>
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="my_autopylot" href="index.html">my_autopylot</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="my_autopylot.Engine.citrix_scrape_contents_by_search_copy_paste" href="#my_autopylot.Engine.citrix_scrape_contents_by_search_copy_paste">citrix_scrape_contents_by_search_copy_paste</a></code></li>
+<li><code><a title="my_autopylot.Engine.citrix_window_clear_search" href="#my_autopylot.Engine.citrix_window_clear_search">citrix_window_clear_search</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_base64_to_img" href="#my_autopylot.Engine.convert_base64_to_img">convert_base64_to_img</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_change_corrupt_xls_to_xlsx" href="#my_autopylot.Engine.convert_change_corrupt_xls_to_xlsx">convert_change_corrupt_xls_to_xlsx</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_csv_to_excel" href="#my_autopylot.Engine.convert_csv_to_excel">convert_csv_to_excel</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_excel_to_colored_html" href="#my_autopylot.Engine.convert_excel_to_colored_html">convert_excel_to_colored_html</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_image_to_base64" href="#my_autopylot.Engine.convert_image_to_base64">convert_image_to_base64</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_jpg_to_png" href="#my_autopylot.Engine.convert_jpg_to_png">convert_jpg_to_png</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_png_to_jpg" href="#my_autopylot.Engine.convert_png_to_jpg">convert_png_to_jpg</a></code></li>
+<li><code><a title="my_autopylot.Engine.convert_xls_to_xlsx" href="#my_autopylot.Engine.convert_xls_to_xlsx">convert_xls_to_xlsx</a></code></li>
+<li><code><a title="my_autopylot.Engine.ds_describe_excel_data" href="#my_autopylot.Engine.ds_describe_excel_data">ds_describe_excel_data</a></code></li>
+<li><code><a title="my_autopylot.Engine.ds_draw_charts_from_excel" href="#my_autopylot.Engine.ds_draw_charts_from_excel">ds_draw_charts_from_excel</a></code></li>
+<li><code><a title="my_autopylot.Engine.ds_html_table_from_website" href="#my_autopylot.Engine.ds_html_table_from_website">ds_html_table_from_website</a></code></li>
+<li><code><a title="my_autopylot.Engine.ds_pivot_excel_table" href="#my_autopylot.Engine.ds_pivot_excel_table">ds_pivot_excel_table</a></code></li>
+<li><code><a title="my_autopylot.Engine.file_get_json_details" href="#my_autopylot.Engine.file_get_json_details">file_get_json_details</a></code></li>
+<li><code><a title="my_autopylot.Engine.file_rename" href="#my_autopylot.Engine.file_rename">file_rename</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_create" href="#my_autopylot.Engine.folder_create">folder_create</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_create_text_file" href="#my_autopylot.Engine.folder_create_text_file">folder_create_text_file</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_delete_all_files" href="#my_autopylot.Engine.folder_delete_all_files">folder_delete_all_files</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_get_all_filenames_as_list" href="#my_autopylot.Engine.folder_get_all_filenames_as_list">folder_get_all_filenames_as_list</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_read_text_file" href="#my_autopylot.Engine.folder_read_text_file">folder_read_text_file</a></code></li>
+<li><code><a title="my_autopylot.Engine.folder_write_text_file" href="#my_autopylot.Engine.folder_write_text_file">folder_write_text_file</a></code></li>
+<li><code><a title="my_autopylot.Engine.image_to_text" href="#my_autopylot.Engine.image_to_text">image_to_text</a></code></li>
+<li><code><a title="my_autopylot.Engine.img_camera_capture" href="#my_autopylot.Engine.img_camera_capture">img_camera_capture</a></code></li>
+<li><code><a title="my_autopylot.Engine.key_hit_enter" href="#my_autopylot.Engine.key_hit_enter">key_hit_enter</a></code></li>
+<li><code><a title="my_autopylot.Engine.key_press" href="#my_autopylot.Engine.key_press">key_press</a></code></li>
+<li><code><a title="my_autopylot.Engine.key_write_enter" href="#my_autopylot.Engine.key_write_enter">key_write_enter</a></code></li>
+<li><code><a title="my_autopylot.Engine.mail_send_gmail_with_app_password" href="#my_autopylot.Engine.mail_send_gmail_with_app_password">mail_send_gmail_with_app_password</a></code></li>
+<li><code><a title="my_autopylot.Engine.mail_send_via_desktop_outlook" href="#my_autopylot.Engine.mail_send_via_desktop_outlook">mail_send_via_desktop_outlook</a></code></li>
+<li><code><a title="my_autopylot.Engine.mouse_click" href="#my_autopylot.Engine.mouse_click">mouse_click</a></code></li>
+<li><code><a title="my_autopylot.Engine.mouse_drag_from_to" href="#my_autopylot.Engine.mouse_drag_from_to">mouse_drag_from_to</a></code></li>
+<li><code><a title="my_autopylot.Engine.mouse_move" href="#my_autopylot.Engine.mouse_move">mouse_move</a></code></li>
+<li><code><a title="my_autopylot.Engine.mouse_search_snip_return_coordinates_x_y" href="#my_autopylot.Engine.mouse_search_snip_return_coordinates_x_y">mouse_search_snip_return_coordinates_x_y</a></code></li>
+<li><code><a title="my_autopylot.Engine.msg_box_ask_yes_no" href="#my_autopylot.Engine.msg_box_ask_yes_no">msg_box_ask_yes_no</a></code></li>
+<li><code><a title="my_autopylot.Engine.msg_box_info" href="#my_autopylot.Engine.msg_box_info">msg_box_info</a></code></li>
+<li><code><a title="my_autopylot.Engine.msg_count_down" href="#my_autopylot.Engine.msg_count_down">msg_count_down</a></code></li>
+<li><code><a title="my_autopylot.Engine.pdf_extract_all_tables" href="#my_autopylot.Engine.pdf_extract_all_tables">pdf_extract_all_tables</a></code></li>
+<li><code><a title="my_autopylot.Engine.schedule_code" href="#my_autopylot.Engine.schedule_code">schedule_code</a></code></li>
+<li><code><a title="my_autopylot.Engine.schedule_delete_task" href="#my_autopylot.Engine.schedule_delete_task">schedule_delete_task</a></code></li>
+<li><code><a title="my_autopylot.Engine.schedule_py_file" href="#my_autopylot.Engine.schedule_py_file">schedule_py_file</a></code></li>
+<li><code><a title="my_autopylot.Engine.speech_to_text" href="#my_autopylot.Engine.speech_to_text">speech_to_text</a></code></li>
+<li><code><a title="my_autopylot.Engine.string_extract_only_alphabets" href="#my_autopylot.Engine.string_extract_only_alphabets">string_extract_only_alphabets</a></code></li>
+<li><code><a title="my_autopylot.Engine.string_extract_only_numbers" href="#my_autopylot.Engine.string_extract_only_numbers">string_extract_only_numbers</a></code></li>
+<li><code><a title="my_autopylot.Engine.string_remove_special_characters" href="#my_autopylot.Engine.string_remove_special_characters">string_remove_special_characters</a></code></li>
+<li><code><a title="my_autopylot.Engine.text_to_speech" href="#my_autopylot.Engine.text_to_speech">text_to_speech</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_activate_and_maximize_windows" href="#my_autopylot.Engine.window_activate_and_maximize_windows">window_activate_and_maximize_windows</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_activate_window" href="#my_autopylot.Engine.window_activate_window">window_activate_window</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_close_windows" href="#my_autopylot.Engine.window_close_windows">window_close_windows</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_get_active_window" href="#my_autopylot.Engine.window_get_active_window">window_get_active_window</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_get_all_opened_titles_windows" href="#my_autopylot.Engine.window_get_all_opened_titles_windows">window_get_all_opened_titles_windows</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_minimize_windows" href="#my_autopylot.Engine.window_minimize_windows">window_minimize_windows</a></code></li>
+<li><code><a title="my_autopylot.Engine.window_restore_windows" href="#my_autopylot.Engine.window_restore_windows">window_restore_windows</a></code></li>
+<li><code><a title="my_autopylot.Engine.windows_launch_app" href="#my_autopylot.Engine.windows_launch_app">windows_launch_app</a></code></li>
+<li><code><a title="my_autopylot.Engine.windows_show_desktop" href="#my_autopylot.Engine.windows_show_desktop">windows_show_desktop</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
