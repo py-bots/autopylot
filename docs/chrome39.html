@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>my_autopylot.chrome39 API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>my_autopylot.chrome39</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="my_autopylot.chrome39.ChromeBrowser"><code class="flex name class">
+<span>class <span class="ident">ChromeBrowser</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="my_autopylot.chrome39.ChromeBrowser.check_if"><code class="name flex">
+<span>def <span class="ident">check_if</span></span>(<span>self, text: str = '', element: str = 't')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Check if a specific element is found.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>To wait until the string appears on the screen. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Export Successful Completed. Defaults: ""</dd>
+<dt><strong><code>element</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Type of Element Whether its a Text(t) or Button(b). </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"t - Text".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Close the current active browser.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>[status]
+<br>
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.get_element_image"><code class="name flex">
+<span>def <span class="ident">get_element_image</span></span>(<span>self, element_xpath: str = '', base64_image: bool = True, image_name: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the image of the element.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>element_xpath</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element. Defaults: ""</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Whether the function is successful or failed.</dd>
+<dt><code>str</code></dt>
+<dd>The image of the element.</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.get_text"><code class="name flex">
+<span>def <span class="ident">get_text</span></span>(<span>self, element_xpath: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Get the text of the element.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>element_xpath</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element. Defaults: ""</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status, data]
+status (bool): Whether the function is successful or failed.
+data (str): The text of the element.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.get_value_relatively"><code class="name flex">
+<span>def <span class="ident">get_value_relatively</span></span>(<span>self, element_type='Text', above='', below='', to_left_of='', to_right_of='')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Text Element : Get the value of the element
+Link Element : Get the text of the element
+Button Element : Performs single left click on the element</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>element_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The type of the element. Defaults: "Text".</dd>
+<dt><strong><code>above</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element above. Defaults: "".</dd>
+<dt><strong><code>below</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element below. Defaults: "".</dd>
+<dt><strong><code>to_left_of</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element to the left of. Defaults: "".</dd>
+<dt><strong><code>to_right_of</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The xpath of the element to the right of. Defaults: "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status, data]
+status (bool): Whether the function is successful or failed.
+data (str): The value of the element.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.hit_enter"><code class="name flex">
+<span>def <span class="ident">hit_enter</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Hits enter KEY in Browser</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.key_press"><code class="name flex">
+<span>def <span class="ident">key_press</span></span>(<span>self, key_1: str = '', key_2: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Type text using Browser Helium Functions and press hot keys.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key_1</code></strong> :&ensp;<code>str</code></dt>
+<dd>Keys you want to simulate or string you want to press </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>"tab" or "Murali". Defaults: ""</dd>
+<dt><strong><code>key_2</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key you want to simulate with combination to key_1. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>"shift" or "escape". Defaults: ""</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.mouse"><code class="name flex">
+<span>def <span class="ident">mouse</span></span>(<span>self, value: str = '', action_type: str = 'single', value_type: str = 'text')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Description:
+Performs a Mouse Click on the given value.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The value which has to be clicked.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"".</dd>
+<dt><strong><code>action_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The type of click.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"single".</dd>
+<dt><strong><code>value_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The type of value.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"text".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.mouse_v2"><code class="name flex">
+<span>def <span class="ident">mouse_v2</span></span>(<span>self, value: str = '', action_type: str = 'single', value_type: str = 't')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Description:
+Performs a Mouse Click on the given value.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The value which has to be clicked.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"".</dd>
+<dt><strong><code>action_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The type of click.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"single".</dd>
+<dt><strong><code>value_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The type of value.</dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"text".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.navigate"><code class="name flex">
+<span>def <span class="ident">navigate</span></span>(<span>self, url: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Navigate through the url after the session is started.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>url</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Url which you want to visit. </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.open_browser"><code class="name flex">
+<span>def <span class="ident">open_browser</span></span>(<span>self, dummy_browser: bool = True, profile: str = 'Default', incognito: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>This function opens a browser.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>dummy_browser</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>True to open dummy browser. </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>True.</dd>
+<dt><strong><code>profile</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Profile name to open. </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"Default".</dd>
+<dt><strong><code>incognito</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>True to open incognito browser. </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status, browser_driver]
+status (bool): Whether the function is successful or failed.
+browser_driver (object): The browser driver object.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.refresh_page"><code class="name flex">
+<span>def <span class="ident">refresh_page</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Refresh the current active browser page.</p>
+<h2 id="args">Args</h2>
+<p>None</p>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.scroll"><code class="name flex">
+<span>def <span class="ident">scroll</span></span>(<span>self, direction: str = 'down', weight=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Scrolls the browser window.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>direction</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The direction to scroll. Defaults: "down".u,d,l,r</dd>
+</dl>
+<p>weight
+: The weight of the scroll. Defaults: 3. 3 corresponds to 300 pixs</p>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.set_download_path"><code class="name flex">
+<span>def <span class="ident">set_download_path</span></span>(<span>self, path: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the download path for the browser.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The path to set. Defaults: "".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>Whether the function is successful or failed.</dd>
+</dl></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.set_waiting_time"><code class="name flex">
+<span>def <span class="ident">set_waiting_time</span></span>(<span>self, time: int = 10)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Set the waiting time for the self.browser_driver. If element is not found in the given time, it will raise an exception.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>time</code></strong> :&ensp;<code>[int]</code></dt>
+<dd>The time in seconds to wait for the element to be found. Defaults: 10</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.wait_until"><code class="name flex">
+<span>def <span class="ident">wait_until</span></span>(<span>self, text: str = '', element: str = 't', delay=10)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Wait until a specific element is found.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>To wait until the string appears on the screen. </dd>
+<dt><strong><code>Eg</code></strong></dt>
+<dd>Export Successful Completed. Defaults: ""</dd>
+<dt><strong><code>element</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Type of Element Whether its a Text(t) or Button(b). </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"t - Text".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+<dt id="my_autopylot.chrome39.ChromeBrowser.write"><code class="name flex">
+<span>def <span class="ident">write</span></span>(<span>self, text: str = '', user_visible_text_element: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="description">Description</h2>
+<p>Write a string in browser, if user_visible_text_element is given it writes on the given element.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>String which has be written. </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"".</dd>
+<dt><strong><code>user_visible_text_element</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The element which is visible(Like : Sign in). </dd>
+<dt><strong><code>Defaults</code></strong></dt>
+<dd>"".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>[status]
+status (bool): Whether the function is successful or failed.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="My-AutoPylot" href="https://py-bots.github.io/my-autopylot/docs">
+<img src="https://raw.githubusercontent.com/py-bots/media-pyles/main/my_autopylot_logos/My_AutoPylot_Complete_Light.png" alt="My-AutoPylot"> My-AutoPylot
+</a>
+</header>
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="my_autopylot" href="index.html">my_autopylot</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="my_autopylot.chrome39.ChromeBrowser" href="#my_autopylot.chrome39.ChromeBrowser">ChromeBrowser</a></code></h4>
+<ul class="">
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.check_if" href="#my_autopylot.chrome39.ChromeBrowser.check_if">check_if</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.close" href="#my_autopylot.chrome39.ChromeBrowser.close">close</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.get_element_image" href="#my_autopylot.chrome39.ChromeBrowser.get_element_image">get_element_image</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.get_text" href="#my_autopylot.chrome39.ChromeBrowser.get_text">get_text</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.get_value_relatively" href="#my_autopylot.chrome39.ChromeBrowser.get_value_relatively">get_value_relatively</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.hit_enter" href="#my_autopylot.chrome39.ChromeBrowser.hit_enter">hit_enter</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.key_press" href="#my_autopylot.chrome39.ChromeBrowser.key_press">key_press</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.mouse" href="#my_autopylot.chrome39.ChromeBrowser.mouse">mouse</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.mouse_v2" href="#my_autopylot.chrome39.ChromeBrowser.mouse_v2">mouse_v2</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.navigate" href="#my_autopylot.chrome39.ChromeBrowser.navigate">navigate</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.open_browser" href="#my_autopylot.chrome39.ChromeBrowser.open_browser">open_browser</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.refresh_page" href="#my_autopylot.chrome39.ChromeBrowser.refresh_page">refresh_page</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.scroll" href="#my_autopylot.chrome39.ChromeBrowser.scroll">scroll</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.set_download_path" href="#my_autopylot.chrome39.ChromeBrowser.set_download_path">set_download_path</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.set_waiting_time" href="#my_autopylot.chrome39.ChromeBrowser.set_waiting_time">set_waiting_time</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.wait_until" href="#my_autopylot.chrome39.ChromeBrowser.wait_until">wait_until</a></code></li>
+<li><code><a title="my_autopylot.chrome39.ChromeBrowser.write" href="#my_autopylot.chrome39.ChromeBrowser.write">write</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
